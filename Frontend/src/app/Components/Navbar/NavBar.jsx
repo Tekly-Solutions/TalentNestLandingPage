@@ -11,12 +11,11 @@ const NavBar = () => {
         <TalentNestLogo />
       </div>
 
-
       <div className="flex items-center justify-center flex-1 sm:flex-1">
         <NavButtonMain />
       </div>
 
-      <nav className="flex items-center justify-end flex-1 sm:flex-1 space-x-3 sm:space-x-6">
+      <nav className="flex items-center justify-end flex-1 sm:flex-1 space-x-2 sm:space-x-3">
         <NavButton2 />
         <NavButton />
       </nav>

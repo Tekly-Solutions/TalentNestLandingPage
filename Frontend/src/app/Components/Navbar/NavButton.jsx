@@ -9,7 +9,7 @@ const NavButton = () => {
 
   const gradientBorderStyle = {
     background:
-      "linear-gradient(90deg, #85DBA0 0%, #5CCA97 25%, #2CB58F 50%, #15AC9A 75%, #04A4A1 100%)",
+      "linear-gradient(90deg, var(--teal-light) 0%, var(--teal-medium) 25%, var(--teal-deep) 50%, var(--teal-dark) 75%, var(--teal-very-dark) 100%)",
     borderRadius: "50px",
     padding: "4px",
     position: "relative",
@@ -17,14 +17,14 @@ const NavButton = () => {
   };
 
   const innerButtonStyle = {
-    background: "white",
+    background: "transparent",
     borderRadius: "50px",
     width: "100%",
     height: "100%",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    color: "black",
+    color: "white",
     fontSize: "12px",
     cursor: "pointer",
     transition: "all 0.3s ease",
@@ -32,6 +32,7 @@ const NavButton = () => {
     zIndex: 2,
     transform: isHovered ? "scale(1.05)" : "scale(1)",
     padding: "0 16px",
+    gap: "8px",
   };
 
   const flowStyle = {
@@ -55,7 +56,7 @@ const NavButton = () => {
     width: "100%",
     height: "100%",
     borderRadius: "50px",
-    background: `linear-gradient(45deg, transparent 30%, #85DBA0 40%, #5CCA97 50%, #2CB58F 60%, #15AC9A 70%, #04A4A1 80%, transparent 90%)`,
+    backgroundImage: `linear-gradient(45deg, transparent 30%, var(--teal-light) 35%, var(--teal-medium) 45%, var(--teal-deep) 55%, var(--teal-dark) 65%, var(--teal-very-dark) 75%, transparent 85%)`,
     backgroundSize: "400% 400%",
     opacity: isHovered ? 0 : 0.8,
     animation: isHovered ? "none" : "flow 2s ease-in-out infinite",
@@ -76,20 +77,20 @@ const NavButton = () => {
   const handleMouseEnter = (e) => {
     setIsHovered(true);
     e.target.style.background =
-      "linear-gradient(90deg, #85DBA0 0%, #5CCA97 25%, #2CB58F 50%, #15AC9A 75%, #04A4A1 100%)";
+      "linear-gradient(90deg, var(--teal-light) 0%, var(--teal-medium) 25%, var(--teal-deep) 50%, var(--teal-dark) 75%, var(--teal-very-dark) 100%)";
     e.target.style.color = "white";
   };
 
   const handleMouseLeave = (e) => {
     setIsHovered(false);
-    e.target.style.background = "white";
-    e.target.style.color = "black";
+    e.target.style.background = "transparent";
+    e.target.style.color = "white";
   };
 
   return (
     <div
       ref={buttonRef}
-      className="w-32 h-9 shadow-[8px_4px_20px_0px_rgba(0,0,0,0.47)] hover:shadow-[8px_4px_25px_0px_rgba(0,0,0,0.6)] transition-all duration-300 ease-in-out"
+      className="w-52 h-9 hover:shadow-[8px_4px_25px_0px_rgba(0,0,0,0.6)] transition-all duration-300 ease-in-out"
       style={gradientBorderStyle}
       onMouseMove={handleMouseMove}
     >
@@ -100,7 +101,18 @@ const NavButton = () => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        Start Free Trial
+        <span>Start Free Trial</span>
+        <span
+          style={{
+            color: isHovered ? "var(--teal-medium)" : "white",
+            transition: "color 0.3s ease",
+            fontWeight: "bold",
+            fontSize: "10px",
+            animation: "blink 1.5s ease-in-out infinite",
+          }}
+        >
+          &gt;&gt;
+        </span>
       </div>
       <style jsx>{`
         @keyframes flow {
@@ -118,6 +130,15 @@ const NavButton = () => {
           }
           100% {
             background-position: 0% 0%;
+          }
+        }
+        @keyframes blink {
+          0%,
+          100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.3;
           }
         }
       `}</style>
