@@ -1,12 +1,10 @@
-
 import NavBar from "../Components/Navbar/NavBar";
-
 import React from "react";
 
-const LandingPage = () => {
+const LandingPage: React.FC = () => {
   return (
     <div>
-      <NavBar />      
+      <NavBar />
     </div>
   );
 };
