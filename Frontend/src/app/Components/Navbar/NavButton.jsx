@@ -48,6 +48,21 @@ const NavButton = () => {
     zIndex: 1,
   };
 
+  const flowingBorderStyle = {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    borderRadius: "50px",
+    background: `linear-gradient(45deg, transparent 30%, #85DBA0 40%, #5CCA97 50%, #2CB58F 60%, #15AC9A 70%, #04A4A1 80%, transparent 90%)`,
+    backgroundSize: "400% 400%",
+    opacity: isHovered ? 0 : 0.8,
+    animation: isHovered ? "none" : "flow 2s ease-in-out infinite",
+    pointerEvents: "none",
+    zIndex: 1,
+  };
+
   const handleMouseMove = (e) => {
     if (buttonRef.current) {
       const rect = buttonRef.current.getBoundingClientRect();
@@ -78,6 +93,7 @@ const NavButton = () => {
       style={gradientBorderStyle}
       onMouseMove={handleMouseMove}
     >
+      <div style={flowingBorderStyle}></div>
       <div style={flowStyle}></div>
       <div
         style={innerButtonStyle}
@@ -86,6 +102,25 @@ const NavButton = () => {
       >
         Start Free Trial
       </div>
+      <style jsx>{`
+        @keyframes flow {
+          0% {
+            background-position: 0% 0%;
+          }
+          25% {
+            background-position: 100% 0%;
+          }
+          50% {
+            background-position: 100% 100%;
+          }
+          75% {
+            background-position: 0% 100%;
+          }
+          100% {
+            background-position: 0% 0%;
+          }
+        }
+      `}</style>
     </div>
   );
 };

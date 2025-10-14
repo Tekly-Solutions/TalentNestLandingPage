@@ -10,7 +10,7 @@ const NavBar = () => {
       <div className="flex items-center flex-1">
         <TalentNestLogo />
       </div>
-    
+
 
       <div className="flex items-center justify-center flex-1 sm:flex-1">
         <NavButtonMain />
