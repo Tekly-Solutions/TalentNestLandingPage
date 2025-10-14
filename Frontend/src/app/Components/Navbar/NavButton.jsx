@@ -41,7 +41,7 @@ const NavButton = () => {
           e.target.style.color = "black";
         }}
       >
-        Start Freee Trial
+        Start Free Trial
       </div>
     </div>
   );

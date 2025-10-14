@@ -1,14 +1,14 @@
-import NavButton  from "../Components/NavButton";
-import NavBar from "../Components/NavBar";
-import React from 'react'
+
+import NavBar from "../Components/Navbar/NavBar";
+
+import React from "react";
 
 const LandingPage = () => {
   return (
     <div>
-       <NavBar/>
-      
+      <NavBar />      
     </div>
-  )
-}
+  );
+};
 
-export default LandingPage
+export default LandingPage;
