@@ -36,7 +36,7 @@ const NavButton2 = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {label}
+      Request Demo
     </button>
   );
 };
