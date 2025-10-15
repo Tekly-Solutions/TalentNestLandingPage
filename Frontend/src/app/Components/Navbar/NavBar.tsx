@@ -6,19 +6,15 @@ import TalentNestLogo from "./TalentNestLogo";
 
 const NavBar: React.FC = () => {
   return (
-    <header className="sticky top-3 sm:top-6 z-50 mt-3 sm:mt-6 w-full max-w-[1000px] h-12 sm:h-14 bg-white rounded-[25px] sm:rounded-[50px] shadow-[0px_4px_20px_0px_rgba(38,166,154,0.35)] mx-auto flex items-center justify-between px-2 sm:px-4">
-      <div className="flex items-center flex-1">
+    <header className="sticky top-0 z-50 w-full max-w-[1000px] h-12 sm:h-14 bg-white rounded-b-[25px] sm:rounded-b-[50px] shadow-[0px_4px_20px_0px_rgba(38,166,154,0.35)] mx-auto flex items-center justify-start px-2 sm:px-4">
+      <div className="flex items-center gap-4 sm:gap-6">
         <TalentNestLogo />
-      </div>
-
-      <div className="flex items-center justify-center flex-1 sm:flex-1">
         <NavButtonMain />
+        <nav className="flex items-center space-x-2 sm:space-x-3 ml-20 sm:ml-44">
+          <NavButton2 />
+          <NavButton />
+        </nav>
       </div>
-
-      <nav className="flex items-center justify-end flex-1 sm:flex-1 space-x-2 sm:space-x-3">
-        <NavButton2 />
-        <NavButton />
-      </nav>
     </header>
   );
 };
