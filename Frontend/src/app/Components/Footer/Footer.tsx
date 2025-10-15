@@ -20,7 +20,17 @@ const Footer: React.FC = () => {
         backgroundAttachment: "fixed, fixed, fixed",
       }}
     >
-      <div className="max-w-[1000px] mx-auto">
+      {/* Transparent Circles Overlay */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-16 left-16 w-32 h-32 bg-white/5 rounded-full blur-sm"></div>
+        <div className="absolute top-32 right-24 w-24 h-24 bg-teal-300/10 rounded-full blur-sm"></div>
+        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-cyan-400/8 rounded-full blur-md"></div>
+        <div className="absolute top-1/2 right-16 w-28 h-28 bg-emerald-300/6 rounded-full blur-sm"></div>
+        <div className="absolute bottom-32 right-1/3 w-36 h-36 bg-teal-200/7 rounded-full blur-sm"></div>
+        <div className="absolute top-20 left-1/2 w-20 h-20 bg-cyan-300/9 rounded-full blur-sm"></div>
+      </div>
+
+      <div className="max-w-[1000px] mx-auto relative z-10">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <CompanyInfo />

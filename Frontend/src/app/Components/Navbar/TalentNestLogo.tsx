@@ -14,7 +14,7 @@ const TalentNestLogo: React.FC<TalentNestLogoProps> = ({ className = "" }) => {
         Talent
       </span>
       <span
-        className="text-green-800 font-bold text-xl"
+        className="text-teal-900 font-bold text-xl"
         style={{ fontFamily: "Monument Extended, Arial, sans-serif" }}
       >
         Nest
