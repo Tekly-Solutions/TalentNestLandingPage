@@ -1,13 +1,16 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, CSSProperties } from "react";
 
-const NavButton = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
-  const buttonRef = useRef(null);
+const NavButton: React.FC = () => {
+  const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({
+    x: 0,
+    y: 0,
+  });
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+  const buttonRef = useRef<HTMLDivElement>(null);
 
-  const gradientBorderStyle = {
+  const gradientBorderStyle: CSSProperties = {
     background:
       "linear-gradient(90deg, var(--teal-light) 0%, var(--teal-medium) 25%, var(--teal-deep) 50%, var(--teal-dark) 75%, var(--teal-very-dark) 100%)",
     borderRadius: "50px",
@@ -16,7 +19,7 @@ const NavButton = () => {
     overflow: "hidden",
   };
 
-  const innerButtonStyle = {
+  const innerButtonStyle: CSSProperties = {
     background: "transparent",
     borderRadius: "50px",
     width: "100%",
@@ -35,7 +38,7 @@ const NavButton = () => {
     gap: "8px",
   };
 
-  const flowStyle = {
+  const flowStyle: CSSProperties = {
     position: "absolute",
     top: 0,
     left: 0,
@@ -49,7 +52,7 @@ const NavButton = () => {
     zIndex: 1,
   };
 
-  const flowingBorderStyle = {
+  const flowingBorderStyle: CSSProperties = {
     position: "absolute",
     top: 0,
     left: 0,
@@ -64,7 +67,7 @@ const NavButton = () => {
     zIndex: 1,
   };
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (buttonRef.current) {
       const rect = buttonRef.current.getBoundingClientRect();
       setMousePosition({
@@ -74,17 +77,19 @@ const NavButton = () => {
     }
   };
 
-  const handleMouseEnter = (e) => {
+  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
     setIsHovered(true);
-    e.target.style.background =
+    const target = e.target as HTMLDivElement;
+    target.style.background =
       "linear-gradient(90deg, var(--teal-light) 0%, var(--teal-medium) 25%, var(--teal-deep) 50%, var(--teal-dark) 75%, var(--teal-very-dark) 100%)";
-    e.target.style.color = "white";
+    target.style.color = "white";
   };
 
-  const handleMouseLeave = (e) => {
+  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
     setIsHovered(false);
-    e.target.style.background = "transparent";
-    e.target.style.color = "white";
+    const target = e.target as HTMLDivElement;
+    target.style.background = "transparent";
+    target.style.color = "white";
   };
 
   return (

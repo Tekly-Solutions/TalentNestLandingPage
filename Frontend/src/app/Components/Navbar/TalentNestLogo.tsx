@@ -1,6 +1,10 @@
 import React from "react";
 
-const TalentNestLogo = ({ className = "" }) => {
+interface TalentNestLogoProps {
+  className?: string;
+}
+
+const TalentNestLogo: React.FC<TalentNestLogoProps> = ({ className = "" }) => {
   return (
     <div className={`flex items-center ${className}`}>
       <span
