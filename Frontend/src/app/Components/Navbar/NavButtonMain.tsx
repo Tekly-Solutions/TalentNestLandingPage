@@ -19,7 +19,7 @@ const NavButtonMain: React.FC<NavButtonMainProps> = ({
   onButtonClick,
 }) => {
   return (
-    <div className="flex items-center space-x-6">
+    <div className="flex items-center gap-2 sm:gap-6">
       {buttons.map((buttonText, index) => {
         const colors: ColorConfig[] = [
           {
@@ -48,7 +48,7 @@ const NavButtonMain: React.FC<NavButtonMainProps> = ({
         return (
           <button
             key={index}
-            className={`pricing-button ${color.text} font-semibold text-xs ${color.hoverText} transition-colors duration-200 relative after:content-[''] after:absolute after:-bottom-1 after:right-0 after:w-0 after:h-0.5 after:bg-gradient-to-r ${color.underline} after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:after:right-auto flex items-center gap-1`}
+            className={`pricing-button ${color.text} font-semibold text-xs ${color.hoverText} transition-colors duration-200 relative after:content-[''] after:absolute after:-bottom-1 after:right-0 after:w-0 after:h-0.5 after:bg-gradient-to-r ${color.underline} after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:after:right-auto flex items-center gap-0.5 sm:gap-1`}
             onClick={() => onButtonClick && onButtonClick(buttonText, index)}
           >
             <span>{buttonText}</span>

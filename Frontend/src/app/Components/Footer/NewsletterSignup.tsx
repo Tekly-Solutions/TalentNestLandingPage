@@ -13,6 +13,8 @@ const NewsletterSignup: React.FC = () => {
             type="email"
             placeholder="Enter your email"
             className="flex-1 px-4 py-2 bg-gray-800 border border-gray-600 rounded-l-lg text-white placeholder-gray-400 focus:outline-none focus:border-[var(--teal-light)]"
+            defaultValue=""
+            suppressHydrationWarning
           />
           <button className="px-6 py-2 bg-[var(--teal-medium)] hover:bg-[var(--teal-dark)] text-white rounded-r-lg transition-colors">
             Subscribe

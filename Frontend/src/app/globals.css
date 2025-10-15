@@ -13,6 +13,14 @@
   --teal-dark: #004d40;
   --teal-very-dark: #00251a;
   --teal-almost-black: #001b0f;
+
+  /* RGB forms for use in rgba() and color functions */
+  --teal-light-rgb: 0 150 136;
+  --teal-medium-rgb: 0 121 107;
+  --teal-deep-rgb: 0 105 92;
+  --teal-dark-rgb: 0 77 64;
+  --teal-very-dark-rgb: 0 37 26;
+  --teal-almost-black-rgb: 0 27 15;
 }
 
 @theme inline {
@@ -63,6 +71,3 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
 }
-
-
-
