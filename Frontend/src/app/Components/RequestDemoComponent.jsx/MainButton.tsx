@@ -1,9 +1,51 @@
+"use client";
+
 import React from "react";
 
-const MainButton: React.FC = () => {
+const MainButton: React.FC<{ label?: string }> = ({
+  label = "Start Free Trial",
+}) => {
   return (
-    <div>
-      <div className="w-[1239px] h-[781px] bg-white rounded-[50px] shadow-[0px_4px_20px_0px_rgba(0,0,0,0.25)]" />
+    <div
+      className="w-52 h-9 transition-all duration-300 ease-in-out"
+      style={{
+        background:
+          "linear-gradient(90deg, var(--teal-light) 0%, var(--teal-medium) 25%, var(--teal-deep) 50%, var(--teal-dark) 75%, var(--teal-very-dark) 100%)",
+        borderRadius: "50px",
+        padding: "4px",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      <div
+        style={{
+          background: "transparent",
+          borderRadius: "50px",
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          color: "white",
+          fontSize: "12px",
+          cursor: "pointer",
+          position: "relative",
+          zIndex: 2,
+          padding: "0 16px",
+          gap: "8px",
+        }}
+      >
+        <span>{label}</span>
+        <span
+          style={{
+            color: "white",
+            fontWeight: "bold",
+            fontSize: "10px",
+          }}
+        >
+          &gt;&gt;
+        </span>
+      </div>
     </div>
   );
 };

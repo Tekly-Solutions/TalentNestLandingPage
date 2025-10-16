@@ -1,13 +1,13 @@
 import React from "react";
 import GradientHeadline from "@/app/Components/Shared/GradientHeadline";
 import GradientPanel from "@/app/Components/Shared/GradientPanel";
-import GradientButton from "@/app/Components/Sections/DemoSection/InputButton";
+import DemoForm from "@/app/Components/Shared/DemoForm";
 
 const WelcomeSection: React.FC = () => {
   return (
     <section
       id="welcome"
-      className="w-full min-h-[60vh] flex flex-col items-center justify-center text-center px-4"
+      className="w-full min-h-[60vh] flex flex-col items-center justify-center text-center px-4 relative"
     >
       <GradientHeadline
         prefix="The Platform for"
@@ -22,24 +22,37 @@ const WelcomeSection: React.FC = () => {
       />
 
       <GradientPanel className="mt-8 p-8">
-        <h3 className="text-white text-xl font-semibold mb-2">Request a demo</h3>
-        <p className="text-white/80 text-sm mb-6 max-w-xs">
-          Schedule a consultation with a real, live product expert to see if we're a fit.
+        <h3 className="text-white text-xl font-semibold mb-2">
+          Request a demo
+        </h3>
+        <p className="text-white/80 text-sm mb-6 max-w-xs mx-auto">
+          Schedule a consultation with a real, live
+          <br />
+          product expert to see if we’re a fit.
         </p>
-        
-        <div className="space-y-4 w-full max-w-xs">
-          <input
-            type="text"
-            placeholder="Full Name"
-            className="w-full px-4 py-3 rounded-full bg-white/20 text-white placeholder-white/60 border border-white/30 focus:outline-none focus:border-white/60 transition"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full px-4 py-3 rounded-full bg-white/20 text-white placeholder-white/60 border border-white/30 focus:outline-none focus:border-white/60 transition"
-          />
-          <GradientButton label="Get Started" />
+        <DemoForm />
+        <p className="text-white/60 text-xs mt-6 max-w-xs mx-auto">
+          By submitting your information, you agree to Lattice's{" "}
+          <a href="#" className="underline text-white">
+            Terms of Service ⯈
+          </a>{" "}
+          and{" "}
+          <a href="#" className="underline text-white">
+            Privacy Policy ⯈
+          </a>
+          . You can opt out anytime.
+        </p>
+        <div className="mt-4 text-xs text-white/70">
+          <span>Not ready for a demo? </span>
+          <a href="#" className="underline text-white">
+            Explore other options ⯈
+          </a>
         </div>
+        <p className="text-white/40 text-[11px] mt-4 max-w-xs mx-auto">
+          *Lattice HRIS and Payroll is currently available for US-based
+          businesses. Limited HRIS beta testing is available in the UK, not
+          including Payroll at this time.
+        </p>
       </GradientPanel>
     </section>
   );
