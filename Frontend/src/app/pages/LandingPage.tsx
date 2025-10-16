@@ -9,6 +9,7 @@ const LandingPage: React.FC = () => {
       <NavBar />
       <RequestDemoPage />
       <FooterPage />
+       
     </div>
   );
 };
