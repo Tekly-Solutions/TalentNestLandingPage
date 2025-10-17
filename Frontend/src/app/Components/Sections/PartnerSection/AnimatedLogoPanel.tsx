@@ -3,27 +3,44 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const logoUrls = [
-  "/Logos/57a640704af2796a4e1bd595e626cd.webp",
-  "/Logos/kisspng-email-business-marketing-logo-organization-dpd-logo-5b48510751cd96.9846732315314659913351.jpg",
-  "/Logos/kisspng-email-business-wyndham-hotels-resorts-uber-flamengo-5b354d419e0072.4200785315302198416472.jpg",
-  "/Logos/kisspng-lyft-hotel-real-estate-company-industry-5adc702f026260.0995092215243960790098.jpg",
-  "/Logos/kisspng-stillman-college-email-united-nations-university-i-football-team-5ae3dce0b4b788.6907550315248826567402.jpg",
-  "/Logos/kisspng-strategic-planning-white-house-new-york-city-the-flash-and-supergirl-5bed59fe1afb83.6035855815422817261105.jpg",
-  "/Logos/kisspng-united-states-email-web-hosting-service-business-5adce7673b12f5.204052461524426599242.jpg",
-  "/Logos/kisspng-united-states-geological-survey-organization-busin-coke-studio-logo-5b4d2c64038f13.4834529015317842920146.jpg",
-  "/Logos/kisspng-united-states-hotel-logo-business-customer-service-5b785aa29a88e7.335711921534614178633.jpg",
-  "/Logos/kisspng-united-states-logo-business-parramatta-eels-manly-pen-logo-5b5175337a4e11.730736661532065075501.jpg",
-  "/Logos/kisspng-white-house-hotel-chevrolet-small-block-engine-car-aphex-twin-5b124f92dabd52.414233561527926674896-removebg-preview.png",
-  "/Logos/kisspng-white-house-hotel-chevrolet-small-block-engine-car-aphex-twin-5b124f92dabd52.414233561527926674896.jpg",
-  "/Logos/kisspng-white-house-logo-organization-lyft-industry-high-grade-certificate-5b067995b15745.1525366815271509977264.jpg",
-  "/Logos/kisspng-white-house-white-noise-food-company-service-new-york-giants-5ac3e7170de5a2.8662988815227881190569.jpg",
+const allLogos = [
+  "/Logos/1656235654bkash-logo-white-removebg-preview.png",
+  "/Logos/1681039182chatgpt-logo-with-name-removebg-preview.png",
+  "/Logos/1color-darkbg_2x-removebg-preview.png",
+  "/Logos/abstract-by-tornike-uchava-dribbble-removebg-preview.png",
+  "/Logos/abstract-by-tornike-uchava-dribbble.png",
+  "/Logos/adidas-white-logo-hd-png-701751694777208ogwssxbgpj-removebg-preview.png",
+  "/Logos/figure-logo-mark-by-usama-awan-dribbble-removebg-preview.png",
+  "/Logos/images (7).png",
+  "/Logos/images-removbg-preview.png",
+  "/Logos/images-removebg-preview.png",
+  "/Logos/images__1_-removebg-preview.png",
+  "/Logos/images__2_-removebg-preview.png",
+  "/Logos/images__3_-removebg-preview.png",
+  "/Logos/images__4_-removebg-preview.png",
+  "/Logos/images__5_-removebg-preview.png",
+  "/Logos/images__6_-removebg-preview.png",
+  "/Logos/images__7_-removebg-preview.png",
+  "/Logos/images__8_-removebg-preview.png",
+  "/Logos/kisspng-lyft-hotel-real-estate-company-industry-5adc702f026260.0995092215243960790098-removebg-preview.png",
+  "/Logos/kisspng-white-house-hotel-chevrolet-small-block-engine-car-aphex-twin-5b124f92dabd52.414233561527926674896-removebg-preview (1).png",
+  "/Logos/kisspng-white-house-logo-organization-lyft-industry-high-grade-certificate-5b067995b15745.1525366815271509977264-removebg-preview.png",
+  "/Logos/logo-brand-white-png-favpng-hXidugwVabhGg1pjY5nHpfaDv-removebg-preview.png",
+  "/Logos/logo-white-removebg-preview.png",
+  "/Logos/Media-Kit-Wordmark-Thumbnail-removebg-preview.png",
+  "/Logos/samsung-white-logo-png-image-701751694714054zbxkqcqh9p-removebg-preview.png",
 ];
+
+const logosRow1 = allLogos.slice(0, 9);
+const logosRow2 = allLogos.slice(9, 17);
+const logosRow3 = allLogos.slice(17);
 
 const ANIMATION_DURATION = 30;
 
-const LogoRow: React.FC<{ reverse?: boolean }> = ({ reverse = false }) => {
-  const logos = reverse ? [...logoUrls].reverse() : logoUrls;
+const LogoRow: React.FC<{ reverse?: boolean; logos: string[] }> = ({
+  reverse = false,
+  logos,
+}) => {
   const duplicatedLogos = [...logos, ...logos, ...logos];
 
   // Direction based on reverse prop
@@ -34,7 +51,7 @@ const LogoRow: React.FC<{ reverse?: boolean }> = ({ reverse = false }) => {
   return (
     <div className="w-full overflow-hidden">
       <motion.div
-        className="flex gap-2 py-6"
+        className="flex gap-8 py-6"
         animate={{
           x: effectiveReverse
             ? [0, -logos.length * 100]
@@ -56,6 +73,10 @@ const LogoRow: React.FC<{ reverse?: boolean }> = ({ reverse = false }) => {
               src={src}
               alt={`logo-${i}`}
               className="h-full w-full object-contain pointer-events-none select-none"
+              style={{
+                transform: i === logos.length ? "scale(1.5)" : "scale(1)",
+                transition: "transform 0.3s ease",
+              }}
               loading="lazy"
               draggable={false}
             />
@@ -70,15 +91,15 @@ const AnimatedLogoPanel: React.FC<{ pauseOnLogoClick?: boolean }> = ({
   pauseOnLogoClick,
 }) => {
   return (
-    <div className="w-full py-16 px-6">
+    <div className="w-full py-8 px-6">
       <div className="mb-4">
-        <LogoRow />
+        <LogoRow logos={logosRow1} />
       </div>
       <div className="mb-4">
-        <LogoRow reverse />
+        <LogoRow reverse logos={logosRow2} />
       </div>
       <div>
-        <LogoRow />
+        <LogoRow logos={logosRow3} />
       </div>
     </div>
   );
