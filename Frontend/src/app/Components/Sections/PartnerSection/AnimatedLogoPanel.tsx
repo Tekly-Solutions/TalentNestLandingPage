@@ -3,27 +3,38 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const logoUrls = [
+const allLogos = [
+  "/Logos/1681039182chatgpt-logo-with-name-removebg-preview.png",
+  "/Logos/abstract-by-tornike-uchava-dribbble-removebg-preview.png",
+  "/Logos/abstract-by-tornike-uchava-dribbble.png",
   "/Logos/adidas-white-logo-hd-png-701751694777208ogwssxbgpj-removebg-preview.png",
+  "/Logos/images (7).png",
+  "/Logos/images-removbg-preview.png",
   "/Logos/images-removebg-preview.png",
-  "/Logos/kisspng-email-business-wyndham-hotels-resorts-uber-flamengo-5b354d419e0072.4200785315302198416472-removebg-preview.png",
+  "/Logos/images__1_-removebg-preview.png",
+  "/Logos/images__2_-removebg-preview.png",
+  "/Logos/images__3_-removebg-preview.png",
+  "/Logos/images__4_-removebg-preview.png",
+  "/Logos/images__5_-removebg-preview.png",
+  "/Logos/images__6_-removebg-preview.png",
+  "/Logos/images__7_-removebg-preview.png",
   "/Logos/kisspng-lyft-hotel-real-estate-company-industry-5adc702f026260.0995092215243960790098-removebg-preview.png",
-  "/Logos/kisspng-united-states-email-web-hosting-service-business-5adce7673b12f5.204052461524426599242-removebg-preview.png",
-  "/Logos/kisspng-united-states-geological-survey-organization-busin-coke-studio-logo-5b4d2c64038f13.4834529015317842920146-removebg-preview.png",
-  "/Logos/kisspng-united-states-hotel-logo-business-customer-service-5b785aa29a88e7.335711921534614178633-removebg-preview.png",
   "/Logos/kisspng-white-house-hotel-chevrolet-small-block-engine-car-aphex-twin-5b124f92dabd52.414233561527926674896-removebg-preview (1).png",
-  "/Logos/kisspng-white-house-hotel-chevrolet-small-block-engine-car-aphex-twin-5b124f92dabd52.414233561527926674896-removebg-preview copy.png",
-  "/Logos/kisspng-white-house-hotel-chevrolet-small-block-engine-car-aphex-twin-5b124f92dabd52.414233561527926674896-removebg-preview.png",
   "/Logos/kisspng-white-house-logo-organization-lyft-industry-high-grade-certificate-5b067995b15745.1525366815271509977264-removebg-preview.png",
-  "/Logos/kisspng-white-house-logo-organization-lyft-industry-high-grade-certificate-5b067995b15745.1525366815271509977264.jpg",
-  "/Logos/kisspng-white-house-white-noise-food-company-service-new-york-giants-5ac3e7170de5a2.8662988815227881190569-removebg-preview.png",
-  "/Logos/kisspng-white-house-white-noise-food-company-service-new-york-giants-5ac3e7170de5a2.8662988815227881190569.jpg",
+  "/Logos/logo-brand-white-png-favpng-hXidugwVabhGg1pjY5nHpfaDv-removebg-preview.png",
+  "/Logos/samsung-white-logo-png-image-701751694714054zbxkqcqh9p-removebg-preview.png",
 ];
+
+const logosRow1 = allLogos.slice(0, 7);
+const logosRow2 = allLogos.slice(7, 14);
+const logosRow3 = allLogos.slice(14);
 
 const ANIMATION_DURATION = 30;
 
-const LogoRow: React.FC<{ reverse?: boolean }> = ({ reverse = false }) => {
-  const logos = reverse ? [...logoUrls].reverse() : logoUrls;
+const LogoRow: React.FC<{ reverse?: boolean; logos: string[] }> = ({
+  reverse = false,
+  logos,
+}) => {
   const duplicatedLogos = [...logos, ...logos, ...logos];
 
   // Direction based on reverse prop
@@ -34,7 +45,7 @@ const LogoRow: React.FC<{ reverse?: boolean }> = ({ reverse = false }) => {
   return (
     <div className="w-full overflow-hidden">
       <motion.div
-        className="flex gap-0 py-6"
+        className="flex gap-4 py-6"
         animate={{
           x: effectiveReverse
             ? [0, -logos.length * 100]
@@ -56,6 +67,10 @@ const LogoRow: React.FC<{ reverse?: boolean }> = ({ reverse = false }) => {
               src={src}
               alt={`logo-${i}`}
               className="h-full w-full object-contain pointer-events-none select-none"
+              style={{
+                transform: i === logos.length ? "scale(1.5)" : "scale(1)",
+                transition: "transform 0.3s ease",
+              }}
               loading="lazy"
               draggable={false}
             />
@@ -72,13 +87,13 @@ const AnimatedLogoPanel: React.FC<{ pauseOnLogoClick?: boolean }> = ({
   return (
     <div className="w-full py-8 px-6">
       <div className="mb-4">
-        <LogoRow />
+        <LogoRow logos={logosRow1} />
       </div>
       <div className="mb-4">
-        <LogoRow reverse />
+        <LogoRow reverse logos={logosRow2} />
       </div>
       <div>
-        <LogoRow />
+        <LogoRow logos={logosRow3} />
       </div>
     </div>
   );
