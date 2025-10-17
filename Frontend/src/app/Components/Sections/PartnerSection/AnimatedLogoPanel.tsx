@@ -4,10 +4,13 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const allLogos = [
+  "/Logos/1656235654bkash-logo-white-removebg-preview.png",
   "/Logos/1681039182chatgpt-logo-with-name-removebg-preview.png",
+  "/Logos/1color-darkbg_2x-removebg-preview.png",
   "/Logos/abstract-by-tornike-uchava-dribbble-removebg-preview.png",
   "/Logos/abstract-by-tornike-uchava-dribbble.png",
   "/Logos/adidas-white-logo-hd-png-701751694777208ogwssxbgpj-removebg-preview.png",
+  "/Logos/figure-logo-mark-by-usama-awan-dribbble-removebg-preview.png",
   "/Logos/images (7).png",
   "/Logos/images-removbg-preview.png",
   "/Logos/images-removebg-preview.png",
@@ -18,16 +21,19 @@ const allLogos = [
   "/Logos/images__5_-removebg-preview.png",
   "/Logos/images__6_-removebg-preview.png",
   "/Logos/images__7_-removebg-preview.png",
+  "/Logos/images__8_-removebg-preview.png",
   "/Logos/kisspng-lyft-hotel-real-estate-company-industry-5adc702f026260.0995092215243960790098-removebg-preview.png",
   "/Logos/kisspng-white-house-hotel-chevrolet-small-block-engine-car-aphex-twin-5b124f92dabd52.414233561527926674896-removebg-preview (1).png",
   "/Logos/kisspng-white-house-logo-organization-lyft-industry-high-grade-certificate-5b067995b15745.1525366815271509977264-removebg-preview.png",
   "/Logos/logo-brand-white-png-favpng-hXidugwVabhGg1pjY5nHpfaDv-removebg-preview.png",
+  "/Logos/logo-white-removebg-preview.png",
+  "/Logos/Media-Kit-Wordmark-Thumbnail-removebg-preview.png",
   "/Logos/samsung-white-logo-png-image-701751694714054zbxkqcqh9p-removebg-preview.png",
 ];
 
-const logosRow1 = allLogos.slice(0, 7);
-const logosRow2 = allLogos.slice(7, 14);
-const logosRow3 = allLogos.slice(14);
+const logosRow1 = allLogos.slice(0, 9);
+const logosRow2 = allLogos.slice(9, 17);
+const logosRow3 = allLogos.slice(17);
 
 const ANIMATION_DURATION = 30;
 
@@ -45,7 +51,7 @@ const LogoRow: React.FC<{ reverse?: boolean; logos: string[] }> = ({
   return (
     <div className="w-full overflow-hidden">
       <motion.div
-        className="flex gap-4 py-6"
+        className="flex gap-8 py-6"
         animate={{
           x: effectiveReverse
             ? [0, -logos.length * 100]
