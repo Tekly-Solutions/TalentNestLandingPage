@@ -1,40 +1,56 @@
+"use client";
+
 import React from "react";
 
 type GradientButtonProps = {
-  label: string;
-  onClick?: () => void;
-  className?: string;
-  widthClassName?: string;
-  heightClassName?: string;
-  roundedClassName?: string;
+  label?: string;
 };
 
 const GradientButton: React.FC<GradientButtonProps> = ({
-  label,
-  onClick,
-  className = "",
-  widthClassName = "w-72",
-  heightClassName = "h-9",
-  roundedClassName = "rounded-[50px]",
+  label = "Start Free Trial",
 }) => {
-  const gradient =
-    "linear-gradient(90deg, rgba(133, 219, 160, 1) 0%, rgba(92, 202, 151, 1) 25%, rgba(44, 181, 143, 1) 50%, rgba(21, 172, 154, 1) 75%, rgba(4, 164, 161, 1) 100%)";
-
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={`${widthClassName} ${heightClassName} ${roundedClassName} shadow-[8px_4px_20px_0px_rgba(0,0,0,0.47)] text-teal-800 font-medium mix-blend-normal ${className}`}
+    <div
+      className="w-52 h-9 transition-all duration-300 ease-in-out"
       style={{
-        // Two layers: inner solid fill, outer gradient for the border
-        backgroundImage: `linear-gradient(var(--btn-fill, #ffffff), var(--btn-fill, #ffffff)), ${gradient}`,
-        backgroundOrigin: "border-box",
-        backgroundClip: "padding-box, border-box",
-        border: "4px solid transparent",
+        background:
+          "linear-gradient(90deg, var(--teal-light) 0%, var(--teal-medium) 25%, var(--teal-deep) 50%, var(--teal-dark) 75%, var(--teal-very-dark) 100%)",
+        borderRadius: "50px",
+        padding: "4px",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      {label}
-    </button>
+      <div
+        style={{
+          background: "transparent",
+          borderRadius: "50px",
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          color: "white",
+          fontSize: "12px",
+          cursor: "pointer",
+          position: "relative",
+          zIndex: 2,
+          padding: "0 16px",
+          gap: "8px",
+        }}
+      >
+        <span>{label}</span>
+        <span
+          style={{
+            color: "white",
+            fontWeight: "bold",
+            fontSize: "10px",
+          }}
+        >
+          &gt;&gt;
+        </span>
+      </div>
+    </div>
   );
 };
 
