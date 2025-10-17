@@ -3,7 +3,7 @@ import GradientHeadline from "@/app/Components/Shared/GradientHeadline";
 import GradientPanel from "@/app/Components/Shared/GradientPanel";
 import DemoForm from "@/app/Components/Shared/DemoForm";
 
-const WelcomeSection: React.FC = () => {
+const RequestDemoSection: React.FC = () => {
   return (
     <section
       id="welcome"
@@ -58,4 +58,4 @@ const WelcomeSection: React.FC = () => {
   );
 };
 
-export default WelcomeSection;
+export default RequestDemoSection;

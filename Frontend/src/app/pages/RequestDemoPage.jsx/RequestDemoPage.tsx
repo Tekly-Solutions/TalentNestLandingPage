@@ -1,12 +1,10 @@
 "use client";
 
 import React from "react";
-import WelcomeSection from "@/app/Components/Sections/WelcomeSection";
-import FeaturesSection from "@/app/Components/Sections/FeaturesSection";
-import PartnersSection from "@/app/Components/Sections/PartnersSection";
-import ContactSection from "@/app/Components/Sections/ContactSection";
+import WelcomeSection from "@/app/Components/Sections/RequestDemoSection";
 import Loader from "@/app/Components/Shared/Loader";
 import FloatingElement from "@/app/Components/Shared/FloatingElement";
+import RequestDemoSection from "@/app/Components/Sections/RequestDemoSection";
 
 const RequestDemoPage: React.FC = () => {
   return (
@@ -50,12 +48,14 @@ const RequestDemoPage: React.FC = () => {
         <Loader size={0.35} />
       </FloatingElement>
 
-      {/* Welcome */}
-      <WelcomeSection />
+      {/* Request Demo Section */}
+      <RequestDemoSection />
+      {/* Partner Logo Section */}
 
       
-
       
+
+
     </main>
   );
 };
