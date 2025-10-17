@@ -8,6 +8,7 @@ const LandingPage: React.FC = () => {
     <div className="min-h-screen px-4 sm:px-8">
       <NavBar />
       <RequestDemoPage />
+      <RequestDemoPage />
       <FooterPage />
        
     </div>

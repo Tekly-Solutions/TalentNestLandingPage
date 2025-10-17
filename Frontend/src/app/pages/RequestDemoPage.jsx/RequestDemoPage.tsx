@@ -3,8 +3,7 @@
 import React from "react";
 import WelcomeSection from "@/app/Components/Sections/WelcomeSection";
 import FeaturesSection from "@/app/Components/Sections/FeaturesSection";
-import PricingSection from "@/app/Components/Sections/PricingSection";
-import AboutSection from "@/app/Components/Sections/PartnersSection";
+import PartnersSection from "@/app/Components/Sections/PartnersSection";
 import ContactSection from "@/app/Components/Sections/ContactSection";
 import Loader from "@/app/Components/Shared/Loader";
 import FloatingElement from "@/app/Components/Shared/FloatingElement";
@@ -54,27 +53,9 @@ const RequestDemoPage: React.FC = () => {
       {/* Welcome */}
       <WelcomeSection />
 
-      <hr className="my-10 border-gray-200" />
+      
 
-      {/* Features */}
-      <FeaturesSection />
-
-      <hr className="my-10 border-gray-200" />
-
-      {/* Pricing */}
-      <PricingSection />
-
-      <hr className="my-10 border-gray-200" />
-
-      {/* About */}
-      <AboutSection />
-
-      <hr className="my-10 border-gray-200" />
-
-      {/* Contact */}
-      <ContactSection />
-
-      {/* Demo removed as requested */}
+      
     </main>
   );
 };
