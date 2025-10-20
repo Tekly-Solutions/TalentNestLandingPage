@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import WelcomeSection from "@/app/Components/Sections/RequestDemoSection";
 import Loader from "@/app/Components/Shared/Loader";
 import FloatingElement from "@/app/Components/Shared/FloatingElement";
 import RequestDemoSection from "@/app/Components/Sections/RequestDemoSection";
@@ -51,10 +50,6 @@ const RequestDemoPage: React.FC = () => {
       {/* Request Demo Section */}
       <RequestDemoSection />
       {/* Partner Logo Section */}
-
-      
-      
-
 
     </main>
   );

@@ -10,6 +10,7 @@ const LandingPage: React.FC = () => {
       <NavBar />
       <RequestDemoPage />
       <PartnersSection />
+      <RequestDemoPage />
       <FooterPage />
        
     </div>
