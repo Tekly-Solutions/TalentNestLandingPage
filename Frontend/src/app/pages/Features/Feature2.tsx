@@ -9,14 +9,14 @@ import ResponseTimesCard from "../../Components/Features/ResponseTimesCard";
 import SupportCard from "../../Components/Features/SupportCard";
 import SecurityCard from "../../Components/Features/SecurityCard";
 
-const Feature1: React.FC = () => {
+const Feature2: React.FC = () => {
   return (
     <main
-      className="w-full max-w-[1000px] bg-white text-slate-900 rounded-[60px] sm:rounded-[80px] shadow-[0px_4px_20px_0px_rgba(38,166,154,0.35)] mx-auto mt-12 mb-8 p-6 sm:p-8 relative pb-28"
+      className="w-full max-w-[1000px] bg-white text-slate-900 rounded-[25px] sm:rounded-[50px] shadow-[0px_4px_20px_0px_rgba(38,166,154,0.35)] mx-auto mt-12 mb-8 p-6 sm:p-8 relative pb-28"
       style={{
         position: "relative",
         zIndex: 1,
-        overflow: "visible", // allow floating button to overflow
+        overflow: "visible",
       }}
     >
       {/* Gradient border overlay */}
@@ -25,7 +25,7 @@ const Feature1: React.FC = () => {
           position: "absolute",
           inset: 0,
           zIndex: 0,
-          borderRadius: "80px",
+          borderRadius: "40px",
           padding: "4px",
           background: "linear-gradient(90deg, #ffe066, #ffb300, #bfa100)",
           WebkitMask:
@@ -39,13 +39,13 @@ const Feature1: React.FC = () => {
         style={{
           position: "absolute",
           left: "50%",
-          top: "-16px", // move downward
+          top: "24px",
           transform: "translate(-50%, 0)",
           zIndex: 20,
           background: "white",
           borderRadius: "9999px",
           boxShadow: "0 4px 16px rgba(0,0,0,0.10)",
-          padding: 0, // remove extra padding
+          padding: 0,
           display: "inline-block",
         }}
       >
@@ -68,7 +68,7 @@ const Feature1: React.FC = () => {
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
             gap: "20px",
-            marginBottom: "20px",
+            marginBottom: "40px",
           }}
         >
           <DashboardCard />
@@ -81,7 +81,7 @@ const Feature1: React.FC = () => {
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
             gap: "20px",
-            marginBottom: "20px",
+            marginBottom: "40px",
           }}
         >
           <MobileCard />
@@ -94,7 +94,7 @@ const Feature1: React.FC = () => {
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
             gap: "20px",
-            marginBottom: "20px",
+            marginBottom: "40px",
           }}
         >
           <ResponseTimesCard />
@@ -116,4 +116,4 @@ const Feature1: React.FC = () => {
   );
 };
 
-export default Feature1;
+export default Feature2;
