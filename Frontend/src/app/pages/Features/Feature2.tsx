@@ -1,13 +1,13 @@
 import React from "react";
 import HeadButton from "@/app/Components/Sections/HeadButton";
-import HeroSection from "../../Components/Features/HeroSection";
-import DashboardCard from "../../Components/Features/DashboardCard";
-import IntegrationsCard from "../../Components/Features/IntegrationsCard";
-import MobileCard from "../../Components/Features/MobileCard";
-import RatingsCard from "../../Components/Features/RatingsCard";
-import ResponseTimesCard from "../../Components/Features/ResponseTimesCard";
-import SupportCard from "../../Components/Features/SupportCard";
-import SecurityCard from "../../Components/Features/SecurityCard";
+import HeroSection from "../../Components/Features/Feature2/HeroSection";
+import DashboardCard from "../../Components/Features/Feature2/DashboardCard";
+import IntegrationsCard from "../../Components/Features/Feature2/IntegrationsCard";
+import MobileCard from "../../Components/Features/Feature2/MobileCard";
+import RatingsCard from "../../Components/Features/Feature2/RatingsCard";
+import ResponseTimesCard from "../../Components/Features/Feature2/ResponseTimesCard";
+import SupportCard from "../../Components/Features/Feature2/SupportCard";
+import SecurityCard from "../../Components/Features/Feature2/SecurityCard";
 
 const Feature2: React.FC = () => {
   return (
