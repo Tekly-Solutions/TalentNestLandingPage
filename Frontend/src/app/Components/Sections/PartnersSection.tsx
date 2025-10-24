@@ -16,7 +16,35 @@ const PartnersSection: React.FC = () => {
         <div className="flex-1 h-2 bg-white"></div>
         <div className="flex-1 h-0.5 bg-white opacity-70"></div>
       </div>
-      {/* Add more partner content here if needed */}
+
+      {/* Trust Indicators */}
+      <div className="mt-12 text-center">
+        <h3 className="text-2xl font-semibold text-white mb-8 text-center">
+          Trusted by thousands of businesses like yours
+        </h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div className="text-center">
+            <div className="text-3xl font-bold text-teal-600 mb-2">30,000+</div>
+            <div className="text-white">companies</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-teal-600 mb-2">400M</div>
+            <div className="text-white">people</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-teal-600 mb-2">2.1M</div>
+            <div className="text-white">hires</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-teal-600 mb-2">100+</div>
+            <div className="text-white">countries</div>
+          </div>
+        </div>
+        <div className="mt-8 text-center">
+          <div className="text-4xl font-bold text-teal-600 mb-2">98%</div>
+          <div className="text-white">satisfaction</div>
+        </div>
+      </div>
     </section>
   );
 };
