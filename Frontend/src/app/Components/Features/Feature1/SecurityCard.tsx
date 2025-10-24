@@ -2,7 +2,20 @@ import React from "react";
 import Card from "./Card";
 
 const SecurityCard: React.FC = () => (
-  <Card className="security-card" style={{ gridColumn: "1 / -1" }}>
+  <Card
+    className="security-card"
+    style={{
+      background: "#fff",
+      border: "1px solid #ececec",
+      borderRadius: "12px",
+      boxShadow:
+        "inset 0 2px 12px 0 rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06)",
+      padding: "24px 20px",
+      margin: 0,
+      position: "relative",
+      gridColumn: "1 / -1",
+    }}
+  >
     <h3
       style={{
         fontSize: "24px",

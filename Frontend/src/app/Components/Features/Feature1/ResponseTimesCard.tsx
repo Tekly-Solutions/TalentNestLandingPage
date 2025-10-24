@@ -3,7 +3,22 @@ import Card from "./Card";
 import StatRow from "./StatRow";
 
 const ResponseTimesCard: React.FC = () => (
-  <Card className="response-card">
+  <Card
+    className="response-card"
+    style={{
+      background: "#fff",
+      border: "1px solid #ececec",
+      borderRadius: "12px",
+      boxShadow:
+        "inset 0 2px 12px 0 rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06)",
+      padding: "24px 20px",
+      margin: 0,
+      position: "relative",
+      width: "auto",
+      minHeight: "unset",
+      maxWidth: "100%",
+    }}
+  >
     <div
       style={{
         display: "inline-block",
@@ -38,13 +53,13 @@ const ResponseTimesCard: React.FC = () => (
         name="Phone"
         time="35s"
         iconBg="#ffd93d"
-        iconColor="#333"
+        iconColor="white"
       />
       <StatRow
         icon="Email"
         name="Email"
-        time="96m"
-        iconBg="#ff6b9d"
+        time="1m 12s"
+        iconBg="#90caf9"
         iconColor="white"
       />
     </div>

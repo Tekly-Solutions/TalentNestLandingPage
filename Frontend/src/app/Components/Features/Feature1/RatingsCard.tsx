@@ -3,7 +3,22 @@ import Card from "./Card";
 import RatingCircle from "./RatingCircle";
 
 const RatingsCard: React.FC = () => (
-  <Card className="ratings-card">
+  <Card
+    className="ratings-card"
+    style={{
+      background: "#fff",
+      border: "1px solid #ececec",
+      borderRadius: "12px",
+      boxShadow:
+        "inset 0 2px 12px 0 rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06)",
+      padding: "24px 20px",
+      margin: 0,
+      position: "relative",
+      width: "auto",
+      minHeight: "unset",
+      maxWidth: "100%",
+    }}
+  >
     <div
       style={{
         display: "inline-block",

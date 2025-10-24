@@ -2,7 +2,22 @@ import React from "react";
 import Card from "./Card";
 
 const MobileCard: React.FC = () => (
-  <Card className="mobile-card">
+  <Card
+    className="mobile-card"
+    style={{
+      background: "#fff",
+      border: "1px solid #ececec",
+      borderRadius: "12px",
+      boxShadow:
+        "inset 0 2px 12px 0 rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06)",
+      padding: "24px 20px",
+      margin: 0,
+      position: "relative",
+      width: "auto",
+      minHeight: "unset",
+      maxWidth: "100%",
+    }}
+  >
     <h3
       style={{
         fontSize: "24px",
@@ -11,12 +26,13 @@ const MobileCard: React.FC = () => (
         color: "#000",
       }}
     >
-      Mobile-first HR
+      Custom Time Off and PTO Management
     </h3>
     <p style={{ fontSize: "15px", lineHeight: 1.6, color: "#333" }}>
-      Empower on-the-go managers and employees with a simple, easy-to-deploy app
-      for iOS and Android. Send timely information through push requests,
-      time-tracking, and more from anywhere in your organization.
+      Manage paid time off (PTO), vacation days, and sick leave with
+      flexibility. Create personalized time-off policies that automatically sync
+      with your geofence-enabled clock-ins, making leave management simple and
+      efficient.
     </p>
     <div style={{ marginTop: "25px", textAlign: "center" }}>
       <div
@@ -24,7 +40,7 @@ const MobileCard: React.FC = () => (
           display: "inline-block",
           width: "200px",
           background:
-            "linear-gradient(135deg, #bfa100 0%, #a67c00 50%, #7c5e00 100%)",
+            "linear-gradient(135deg, #fff9c4 0%, #ffe066 50%, #ffb300 100%)",
           borderRadius: "28px",
           padding: "12px",
           boxShadow:

@@ -11,9 +11,10 @@ const HeroSection: React.FC = () => (
         lineHeight: 1.1,
       }}
     >
-      Built for demanding
+      An efficient way to manage attendance
+
       <br />
-      businesses
+       and ensure security
     </h1>
     <p
       style={{
@@ -24,9 +25,7 @@ const HeroSection: React.FC = () => (
         lineHeight: 1.5,
       }}
     >
-      Designed to meet the highest standards for seamless performance,
-      scalability and reliability for businesses that need to stay ahead in a
-      fast-paced market.
+      With geofence-based clock-ins and facial recognition, you can accurately track employee attendance while ensuring a secure and touchless experience.
     </p>
   </div>
 );

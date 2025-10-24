@@ -12,13 +12,15 @@ const Card: React.FC<CardProps> = ({
   style = {},
 }) => {
   const baseStyle: React.CSSProperties = {
-    background: "rgba(255, 255, 255, 0.35)",
-    backdropFilter: "blur(40px)",
+    background: "#fff",
     borderRadius: "20px",
     padding: "35px",
     position: "relative",
     overflow: "hidden",
-    border: "1px solid rgba(255, 255, 255, 0.3)",
+    border: "1px solid #ececec",
+    width: "auto",
+    minHeight: "unset",
+    maxWidth: "100%",
     ...style,
   };
 

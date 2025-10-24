@@ -2,7 +2,19 @@ import React from "react";
 import Card from "./Card";
 
 const SupportCard: React.FC = () => (
-  <Card className="support-card">
+  <Card
+    className="support-card"
+    style={{
+      background: "#fff",
+      border: "1px solid #ececec",
+      borderRadius: "12px",
+      boxShadow:
+        "inset 0 2px 12px 0 rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06)",
+      padding: "24px 20px",
+      margin: 0,
+      position: "relative",
+    }}
+  >
     <h3
       style={{
         fontSize: "24px",
