@@ -14,12 +14,36 @@ const RequestDemoSection: React.FC = () => {
         firstWord="Talent"
         secondWord="People"
         sizeClassName="text-4xl"
-        wrapperClassName="mb-8"
+        wrapperClassName="mb-2"
         prefixClassName="text-black font-[350]"
         firstWordClassName="text-black italic font-light"
         secondWordWeightClassName="font-[350]"
         gradientStops={["#007E7E", "#33B88C", "#A9EBA9", "#33B88C", "#00A3A3"]}
       />
+      {/* Tagline below topic */}
+      <div style={{ textAlign: "center" }}>
+        <span
+          style={{
+            fontSize: "1.00rem",
+            fontWeight: 300,
+            color: "black",
+            fontStyle: "italic",
+          }}
+        >
+          <span style={{ color: "var(--teal-medium)", fontWeight: 500 }}>
+            &quot;
+          </span>
+          Transform the way you manage talent - experience
+          <span style={{ color: "var(--teal-medium)", fontWeight: 500 }}>
+            {" "}
+            TalentNest{" "}
+          </span>
+          in action
+          <span style={{ color: "var(--teal-medium)", fontWeight: 500 }}>
+            &quot;
+          </span>
+        </span>
+      </div>
 
       <GradientPanel className="mt-8 p-8">
         <h3 className="text-white text-xl font-semibold mb-2">

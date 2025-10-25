@@ -5,16 +5,16 @@ const HeroSection: React.FC = () => (
     <h1
       style={{
         fontSize: "52px",
-        fontWeight: 700,
+        fontWeight: 500,
         marginBottom: "20px",
         color: "#000",
         lineHeight: 1.1,
       }}
     >
-      An efficient way to manage attendance
-
+      Goodbye punch cards. 
       <br />
-       and ensure security
+       Hello! smart attendance 
+
     </h1>
     <p
       style={{
