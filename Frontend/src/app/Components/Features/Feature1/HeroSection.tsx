@@ -1,20 +1,19 @@
 import React from "react";
 
 const HeroSection: React.FC = () => (
-  <div style={{ textAlign: "center", marginBottom: "70px" }}>
+  <div style={{ textAlign: "center", marginBottom: "32px" }}>
     <h1
       style={{
         fontSize: "52px",
         fontWeight: 500,
-        marginBottom: "20px",
+        marginBottom: "2px",
         color: "#000",
         lineHeight: 1.1,
       }}
     >
-      Goodbye punch cards. 
+      Goodbye punch cards.
       <br />
-       Hello! smart attendance 
-
+      Hello! smart attendance
     </h1>
     <p
       style={{
@@ -25,7 +24,9 @@ const HeroSection: React.FC = () => (
         lineHeight: 1.5,
       }}
     >
-      With geofence-based clock-ins and facial recognition, you can accurately track employee attendance while ensuring a secure and touchless experience.
+      With geofence-based clock-ins and facial recognition, you can accurately
+      track employee attendance while ensuring a secure and touchless
+      experience.
     </p>
   </div>
 );

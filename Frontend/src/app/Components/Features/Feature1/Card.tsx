@@ -21,6 +21,7 @@ const Card: React.FC<CardProps> = ({
     width: "auto",
     minHeight: "unset",
     maxWidth: "100%",
+    
     ...style,
   };
 

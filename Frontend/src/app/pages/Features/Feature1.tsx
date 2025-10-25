@@ -13,7 +13,7 @@ import SecurityCard from "../../Components/Features/Feature1/SecurityCard";
 const Feature1: React.FC = () => {
   return (
     <main
-      className="w-full bg-white text-slate-900 shadow-[0px_4px_20px_0px_rgba(38,166,154,0.35)] mt-12 mb-8 p-6 sm:p-8 relative pb-28 flex items-center justify-center min-h-[80vh]"
+      className="w-full bg-white text-slate-900 mt-12 mb-8 p-6 sm:p-8 relative pb-28 flex items-center justify-center min-h-[80vh]"
       style={{
         position: "relative",
         zIndex: 1,
@@ -44,7 +44,6 @@ const Feature1: React.FC = () => {
             "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
           WebkitMaskComposite: "xor",
           pointerEvents: "none",
-          boxShadow: "0 0 0 6px #fff, 0 0 24px 4px #ffe06699", // Add glow and white separation
         }}
       />
       {/* Floating HeadButton */}
@@ -57,7 +56,6 @@ const Feature1: React.FC = () => {
           zIndex: 20,
           background: "white",
           borderRadius: "99999px",
-          boxShadow: "0 4px 16px rgba(0,0,0,0.10)",
           padding: 0, // remove extra padding
           display: "inline-block",
         }}
@@ -80,17 +78,15 @@ const Feature1: React.FC = () => {
           className="row"
           style={{
             display: "grid",
-            gridTemplateColumns: "2fr 1fr",
-            gap: "12px",
-            marginBottom: "12px",
+            gridTemplateColumns: "1.5fr 1fr",
+            gap: "8px",
+            marginBottom: "6px",
             maxWidth: "950px",
             marginLeft: "auto",
             marginRight: "auto",
           }}
         >
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "12px" }}
-          >
+          <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
             <DashboardCard />
             <IntegrationsCard />
           </div>
@@ -102,8 +98,8 @@ const Feature1: React.FC = () => {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr",
-            gap: "12px",
-            marginBottom: "12px",
+            gap: "8px",
+            marginBottom: "6px",
             maxWidth: "950px",
             marginLeft: "auto",
             marginRight: "auto",
@@ -117,8 +113,8 @@ const Feature1: React.FC = () => {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            gap: "12px",
-            marginBottom: "12px",
+            gap: "8px",
+            marginBottom: "6px",
             maxWidth: "950px",
             marginLeft: "auto",
             marginRight: "auto",
@@ -131,7 +127,7 @@ const Feature1: React.FC = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              padding: "12px 0",
+              padding: "8px 0",
               position: "relative",
             }}
           >
@@ -146,7 +142,7 @@ const Feature1: React.FC = () => {
                 position: "absolute",
                 right: 0,
                 bottom: 0,
-                margin: "16px",
+                margin: "8px",
               }}
             >
               <ArrowButton />
@@ -159,7 +155,7 @@ const Feature1: React.FC = () => {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            gap: "12px",
+            gap: "8px",
             maxWidth: "950px",
             marginLeft: "auto",
             marginRight: "auto",
