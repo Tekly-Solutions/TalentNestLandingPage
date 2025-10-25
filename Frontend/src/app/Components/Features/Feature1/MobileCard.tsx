@@ -1,4 +1,5 @@
 "use client";
+import FaceRecognitionUI from "./FaceRecognition";
 import React from "react";
 
 type CardProps = {
@@ -47,94 +48,162 @@ const MobileCard = () => (
 
       <p style={{ fontSize: "15px", lineHeight: 1.6, color: "#333" }}>
         With a single tap, employees can punch in or out through the mobile app
-        — the camera opens automatically, performs facial verification, and
+        the camera opens automatically, performs facial verification, and
         records the time and location instantly. No complex steps, no wasted
-        time — just smooth, instant check-ins that keep everyone on track.
+        time just smooth, instant check-ins that keep everyone on track.
       </p>
 
       <span className="attendance-effortless">Attendance made effortless→</span>
 
-      <div style={{ marginTop: "25px", textAlign: "center" }}>
+      <div style={{ marginTop: "20px", textAlign: "center" }}>
         <div
+          className="grainy-parallax-card"
           style={{
             display: "inline-block",
-            width: "200px",
-            background:
-              "linear-gradient(135deg, #fff9c4 0%, #ffe066 50%, #ffb300 100%)",
-            borderRadius: "28px",
-            padding: "12px",
+            width: "160px",
+            background: `linear-gradient(135deg, #fff9c4 0%, #ffe066 50%, #ffb300 100%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.9'/%3E%3C/svg%3E")`,
+            borderRadius: "22px",
+            padding: "10px",
             boxShadow:
-              "0 15px 40px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15)",
+              "0 12px 32px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.15)",
+            position: "relative",
+            overflow: "hidden",
+            backgroundBlendMode: "multiply, lighten",
+            backgroundAttachment: "fixed",
+            marginTop: "60px",
+          }}
+          onMouseMove={(e) => {
+            const card = e.currentTarget;
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            card.style.transform = `perspective(600px) rotateY(${
+              (x - 80) / 30
+            }deg) rotateX(${-(y - 130) / 30}deg)`;
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "none";
           }}
         >
+          {/* Grainy SVG overlay */}
+          <svg
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              pointerEvents: "none",
+              borderRadius: "22px",
+              zIndex: 1,
+              mixBlendMode: "multiply",
+              opacity: 0.18,
+              marginTop: "100px",
+            }}
+            viewBox="0 0 160 280"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <filter id="grain" x="0" y="0">
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.8"
+                numOctaves="2"
+                seed="2"
+              />
+              <feColorMatrix type="saturate" values="0.2" />
+            </filter>
+            <rect width="160" height="280" filter="url(#grain)" />
+          </svg>
           <div
             style={{
               background: "white",
+              marginTop: "10px",
+              height: "260px",
               borderRadius: "20px",
-              height: "320px",
-              padding: "15px",
+              margin: "0 auto",
+              
+              position: "relative",
+              zIndex: 2,
             }}
           >
             <div
               style={{
-                fontSize: "12px",
-                fontWeight: 600,
-                marginBottom: "15px",
+                transform: "scale(0.46)",
+                transformOrigin: "top center",
               }}
             >
-              Time Off
-            </div>
-            <div style={{ fontSize: "11px", color: "#666", lineHeight: 1.8 }}>
-              <div style={{ marginBottom: "8px" }}>Your time off</div>
-              <div style={{ marginBottom: "8px" }}>
-                Total time off: <strong>2</strong>
-              </div>
-              <div style={{ marginBottom: "8px" }}>
-                Total hours: <strong>16</strong>
-              </div>
+              <FaceRecognitionUI />
             </div>
           </div>
         </div>
         <div
           style={{
-            marginTop: "15px",
+            marginTop: "20px",
             display: "flex",
-            flexDirection: "column",
-            gap: "8px",
-            alignItems: "flex-end",
+            flexDirection: "row",
+            gap: "15px",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          <div
+          <a
+            href="https://apps.apple.com/app/idXXXXXXXXX"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
-              background: "rgba(255, 255, 255, 0.8)",
-              borderRadius: "8px",
-              padding: "8px 16px",
-              fontSize: "11px",
+              background: `linear-gradient(135deg, #fff9c4 0%, #ffe066 50%, #ffb300 100%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.9'/%3E%3C/svg%3E")`,
+              borderRadius: "6px",
+              padding: "6px 12px",
+              fontSize: "10px",
               fontWeight: 600,
-              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+              boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+              textDecoration: "none",
+              color: "#000",
+              backgroundBlendMode: "multiply, lighten",
             }}
           >
-            🍎 App Store
-          </div>
-          <div
+            <img
+              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+              alt="Download on the App Store"
+              style={{ height: "16px" }}
+            />
+          </a>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.example.app"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
-              background: "rgba(255, 255, 255, 0.8)",
-              borderRadius: "8px",
-              padding: "8px 16px",
-              fontSize: "11px",
+              background: `linear-gradient(135deg, #fff9c4 0%, #ffe066 50%, #ffb300 100%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.9'/%3E%3C/svg%3E")`,
+              borderRadius: "6px",
+              padding: "6px 12px",
+              fontSize: "10px",
               fontWeight: 600,
-              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+              boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+              textDecoration: "none",
+              color: "#000",
+              backgroundBlendMode: "multiply, lighten",
             }}
           >
-            ▶ Google Play
-          </div>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+              alt="Get it on Google Play"
+              style={{ height: "16px" }}
+            />
+          </a>
         </div>
       </div>
 
       <a
         href="#"
         style={{
-          display: "inline-flex",
+          display: "block",
           alignItems: "center",
           gap: "8px",
           marginTop: "15px",
@@ -142,9 +211,10 @@ const MobileCard = () => (
           color: "#000",
           textDecoration: "none",
           fontWeight: 500,
+          textAlign: "center",
         }}
       >
-        Download on iOS or Android →
+        Download on iOS or Android
       </a>
     </Card>
 
@@ -168,6 +238,7 @@ const MobileCard = () => (
       }
       .attendance-effortless:hover {
         background: #fff9c4;
+        backgroundBlendMode: "multiply, lighten",
       }
     `}</style>
   </>

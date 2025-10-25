@@ -13,7 +13,7 @@ import SecurityCard from "../../Components/Features/Feature1/SecurityCard";
 const Feature1: React.FC = () => {
   return (
     <main
-      className="w-full bg-white text-slate-900 mt-12 mb-8 p-6 sm:p-8 relative pb-28 flex items-center justify-center min-h-[80vh]"
+      className="w-full text-slate-900 mt-12 mb-8 p-6 sm:p-8 relative pb-28 flex items-center justify-center min-h-[80vh]"
       style={{
         position: "relative",
         zIndex: 1,
@@ -60,7 +60,9 @@ const Feature1: React.FC = () => {
           display: "inline-block",
         }}
       >
-        <HeadButton>Time and attendance system</HeadButton>
+        <HeadButton>
+          <span style={{ color: "#000" }}>#Smart&nbsp;</span> Attendance System
+        </HeadButton>
       </div>
       <div
         style={{
@@ -78,10 +80,10 @@ const Feature1: React.FC = () => {
           className="row"
           style={{
             display: "grid",
-            gridTemplateColumns: "1.5fr 1fr",
+            gridTemplateColumns: "1.4fr 1fr",
             gap: "8px",
             marginBottom: "6px",
-            maxWidth: "950px",
+            maxWidth: "900px",
             marginLeft: "auto",
             marginRight: "auto",
           }}
@@ -100,7 +102,7 @@ const Feature1: React.FC = () => {
             gridTemplateColumns: "1fr",
             gap: "8px",
             marginBottom: "6px",
-            maxWidth: "950px",
+            maxWidth: "900px",
             marginLeft: "auto",
             marginRight: "auto",
           }}
@@ -115,7 +117,7 @@ const Feature1: React.FC = () => {
             gridTemplateColumns: "1fr 1fr",
             gap: "8px",
             marginBottom: "6px",
-            maxWidth: "950px",
+            maxWidth: "900px",
             marginLeft: "auto",
             marginRight: "auto",
           }}
@@ -156,7 +158,7 @@ const Feature1: React.FC = () => {
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
             gap: "8px",
-            maxWidth: "950px",
+            maxWidth: "900px",
             marginLeft: "auto",
             marginRight: "auto",
           }}

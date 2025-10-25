@@ -19,7 +19,6 @@ export default function CircularBackButton() {
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-          
             style={{
               filter:
                 "drop-shadow(0 2px 6px rgba(20, 184, 166, 0.45)) drop-shadow(0 1px 2px rgba(0,0,0,0.12))",
