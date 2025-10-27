@@ -100,31 +100,7 @@ const IntegrationsCard: React.FC = () => (
           opacity: 0.25,
         }}
       />
-      {/* SVG noise overlay for grainy effect */}
-      <svg
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          opacity: 0.18,
-          pointerEvents: "none",
-          borderRadius: "10px",
-        }}
-        viewBox="0 0 400 14"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-      >
-        <filter id="noise-bar" x="0" y="0">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="1.2"
-            numOctaves="2"
-            seed="3"
-          />
-        </filter>
-        <rect width="400" height="14" filter="url(#noise-bar)" />
-      </svg>
+      
     </div>
     <h3
       style={{
