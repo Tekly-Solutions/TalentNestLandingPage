@@ -7,10 +7,11 @@ import Feature1 from "./Features/Feature1";
 
 const LandingPage: React.FC = () => {
   return (
-    <div className="min-h-screen px-4 sm:px-8">
+    <div className="min-h-screen ">
       <NavBar />
       <RequestDemoPage />
       <Feature1 />
+        <Feature1 />
       <PartnersSection />
       <FooterPage />
     </div>
