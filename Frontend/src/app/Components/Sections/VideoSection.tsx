@@ -12,6 +12,14 @@ const VideoSection: React.FC = () => {
 
   const playlistVideos = [
     {
+      id: 0,
+      title: "TalentNest Overview",
+      description:
+        "Discover how TalentNest revolutionizes workforce management",
+      videoTitle: "TalentNest Main Video",
+      videoId: "aSte18D2_YE",
+    },
+    {
       id: 1,
       title: "AI Workforce Analytics",
       description: "Learn how our AI analyzes workforce patterns",
