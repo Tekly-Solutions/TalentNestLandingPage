@@ -7,20 +7,14 @@ export interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({
+
   children,
   className = "",
   style = {},
 }) => {
   const baseStyle: React.CSSProperties = {
-    background: "#fff",
-    borderRadius: "20px",
     padding: "35px",
-    position: "relative",
-    overflow: "hidden",
-    border: "1px solid #ececec",
-    width: "auto",
-    minHeight: "unset",
-    maxWidth: "100%",
+    
     ...style,
   };
 

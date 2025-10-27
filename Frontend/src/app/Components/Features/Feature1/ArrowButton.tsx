@@ -11,7 +11,8 @@ export default function CircularBackButton() {
         aria-label="Go back"
       >
         {/* Main circle */}
-        <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-3xl">
+        {/* Main circle */}
+        <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-2xl transition-all duration-300">
           {/* Arrow icon */}
           <svg
             width="28"
@@ -19,10 +20,21 @@ export default function CircularBackButton() {
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-          
             style={{
+              opacity: 0.3,
               filter:
                 "drop-shadow(0 2px 6px rgba(20, 184, 166, 0.45)) drop-shadow(0 1px 2px rgba(0,0,0,0.12))",
+              transition: "all 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.05)";
+              e.currentTarget.style.filter =
+                "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6))";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.filter =
+                "drop-shadow(0 2px 6px rgba(20, 184, 166, 0.45)) drop-shadow(0 1px 2px rgba(0,0,0,0.12))";
             }}
           >
             <path
