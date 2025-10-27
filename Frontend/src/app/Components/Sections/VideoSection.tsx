@@ -175,19 +175,6 @@ const VideoSection: React.FC = () => {
               </div>
             )}
           </div>
-
-          {/* Control buttons */}
-          <div className="flex justify-center mt-4 gap-3">
-            <button
-              onClick={resetToDefaultVideo}
-              className="px-4 py-2 bg-teal-medium text-white text-sm font-medium rounded-lg hover:bg-teal-deep transition-colors duration-200 shadow-md flex items-center gap-2"
-            >
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
-              </svg>
-              Reset to Main Video
-            </button>
-          </div>
         </div>
       </div>
 
@@ -211,7 +198,7 @@ const VideoSection: React.FC = () => {
                     alt={video.videoTitle}
                     className="w-full h-full object-cover rounded-xl"
                   />
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"></div>
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:whitespace-nowrap transition-opacity duration-300 flex items-center justify-center"></div>
                   <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
                     Click to play
                   </div>
