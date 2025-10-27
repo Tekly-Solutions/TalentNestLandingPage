@@ -32,7 +32,7 @@ const RequestDemoSection: React.FC = () => {
         </p>
         <DemoForm />
         <p className="text-white/60 text-xs mt-6 max-w-xs mx-auto">
-          By submitting your information, you agree to Lattice's{" "}
+          By submitting your information, you agree to Lattice;s{" "}
           <a href="#" className="underline text-white">
             Terms of Service ⯈
           </a>{" "}

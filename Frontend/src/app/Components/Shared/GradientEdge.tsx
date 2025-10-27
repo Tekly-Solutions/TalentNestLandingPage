@@ -93,7 +93,6 @@ const GradientEdge: React.FC<GradientPanelProps> = ({
           backgroundClip: clips.join(", "),
           backgroundSize: sizes.join(", "),
           backgroundPosition: positions.join(", "),
-          ...(blends ? { backgroundBlendMode: blends.join(", ") as any } : {}),
           border: `${borderWidth}px solid transparent`,
         } as React.CSSProperties;
       })()
