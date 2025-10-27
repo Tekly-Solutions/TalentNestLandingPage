@@ -6,7 +6,7 @@ const VideoSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [videoSrc, setVideoSrc] = useState(
-    "https://www.youtube.com/embed/aSte18D2_YE?autoplay=1&mute=1&enablejsapi=1&rel=0&modestbranding=1&iv_load_policy=3&showinfo=0&cc_load_policy=0&controls=1"
+    "https://www.youtube.com/embed/aSte18D2_YE?loop=1&playlist=aSte18D2_YE&autoplay=1&mute=1&enablejsapi=1&rel=0&modestbranding=1&iv_load_policy=3&showinfo=0&cc_load_policy=0&controls=1&disablekb=1&fs=0"
   );
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -35,58 +35,32 @@ const VideoSection: React.FC = () => {
   ];
 
   const handlePlaylistVideoClick = (videoId: string) => {
-    const newSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0&modestbranding=1&iv_load_policy=3&showinfo=0&cc_load_policy=0&enablejsapi=1&controls=1`;
+    const newSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0&modestbranding=1&iv_load_policy=3&showinfo=0&cc_load_policy=0&enablejsapi=1&controls=1&disablekb=1&fs=0`;
     setVideoSrc(newSrc);
     setIsPlaying(true);
   };
 
   const resetToDefaultVideo = () => {
     const defaultSrc =
-      "https://www.youtube.com/embed/aSte18D2_YE?autoplay=1&mute=1&enablejsapi=1&rel=0&modestbranding=1&iv_load_policy=3&showinfo=0&cc_load_policy=0&controls=1";
+      "https://www.youtube.com/embed/aSte18D2_YE?loop=1&playlist=aSte18D2_YE&autoplay=1&mute=1&enablejsapi=1&rel=0&modestbranding=1&iv_load_policy=3&showinfo=0&cc_load_policy=0&controls=1&disablekb=1&fs=0";
     setVideoSrc(defaultSrc);
     setIsPlaying(true);
   };
 
-  // Function to safely stop the video and hide controls
-  const stopVideo = () => {
+  // Function to safely pause the video
+  const pauseVideo = () => {
     if (iframeRef.current) {
       try {
         iframeRef.current.contentWindow?.postMessage(
           JSON.stringify({
             event: "command",
-            func: "stopVideo",
+            func: "pauseVideo",
             args: "",
           }),
           "*"
         );
       } catch (error) {
-        console.log("Video stopped");
-      }
-    }
-  };
-
-  // Function to restart the default video
-  const restartDefaultVideo = () => {
-    if (iframeRef.current) {
-      try {
-        iframeRef.current.contentWindow?.postMessage(
-          JSON.stringify({
-            event: "command",
-            func: "seekTo",
-            args: [0, true],
-          }),
-          "*"
-        );
-        iframeRef.current.contentWindow?.postMessage(
-          JSON.stringify({
-            event: "command",
-            func: "playVideo",
-            args: "",
-          }),
-          "*"
-        );
-      } catch (error) {
-        console.log("Video restart failed");
+        console.log("Video paused");
       }
     }
   };
@@ -99,13 +73,13 @@ const VideoSection: React.FC = () => {
             // Only auto-play if it's the default video
             if (videoSrc.includes("aSte18D2_YE")) {
               setVideoSrc(
-                "https://www.youtube.com/embed/aSte18D2_YE?autoplay=1&mute=1&enablejsapi=1&rel=0&modestbranding=1&iv_load_policy=3&showinfo=0&cc_load_policy=0&controls=1"
+                "https://www.youtube.com/embed/aSte18D2_YE?loop=1&playlist=aSte18D2_YE&autoplay=1&mute=1&enablejsapi=1&rel=0&modestbranding=1&iv_load_policy=3&showinfo=0&cc_load_policy=0&controls=1&disablekb=1&fs=0"
               );
               setIsPlaying(true);
             }
           } else {
-            // Stop the video completely when leaving the section
-            stopVideo();
+            // Pause the video when leaving the section
+            pauseVideo();
             setIsPlaying(false);
           }
         });
@@ -135,10 +109,8 @@ const VideoSection: React.FC = () => {
             if (!videoSrc.includes("aSte18D2_YE")) {
               // Playlist video ended, reset to default
               resetToDefaultVideo();
-            } else {
-              // Default video ended, restart it
-              restartDefaultVideo();
             }
+            // Default video loops automatically due to loop=1&playlist parameter
           } else if (data.info === 2) {
             // Video paused
             setIsPlaying(false);
