@@ -27,7 +27,7 @@ const FaceRecognitionUI = () => {
             }, 2000);
             return 100;
           }
-          return prev + 2;
+          return prev +1;
         });
       }, 30);
 
@@ -68,7 +68,7 @@ const FaceRecognitionUI = () => {
           style={{
             background: "#0d1117",
             borderRadius: "24px",
-            height: "565px",
+            height: "900px",
             padding: "10px",
             position: "relative",
             overflow: "hidden",

@@ -31,18 +31,38 @@ const RatingsCard: React.FC = () => (
         marginBottom: "30px",
       }}
     >
-      The best rated HR system
+      No More Attendance Headaches
     </div>
     <div
       style={{
-        display: "flex",
-        justifyContent: "space-around",
-        marginTop: "20px",
+        display: "grid",
+        gridTemplateColumns: "140px 140px",
+        gridRowGap: "6px",
+        gridColumnGap: "6px",
+        marginTop: "6px",
+        justifyContent: "center",
       }}
     >
-      <RatingCircle score={9.0} label="Ease of setup" />
-      <RatingCircle score={9.1} label="Ease of use" />
-      <RatingCircle score={9.3} label="Quality of support" />
+      <RatingCircle
+        label="Eliminated"
+        borderRadius="0px 20px 0px 20px"
+        sentence="Buddy-punching?"
+      />
+      <RatingCircle
+        label="Automated."
+        borderRadius="20px 0px 20px 0px"
+        sentence="Manual attendance logs?"
+      />
+      <RatingCircle
+        label="Gone."
+        borderRadius="20px 0px 20px 0px"
+        sentence="Unknown clock-ins from outside work-zone?"
+      />
+      <RatingCircle
+        label="Reduced"
+        borderRadius="0px 20px 0px 20px"
+        sentence="HR audits and discrepancies?"
+      />
     </div>
   </Card>
 );

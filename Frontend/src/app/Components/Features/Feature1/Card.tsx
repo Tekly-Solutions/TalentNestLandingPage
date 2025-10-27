@@ -7,6 +7,7 @@ export interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({
+
   children,
   className = "",
   style = {},

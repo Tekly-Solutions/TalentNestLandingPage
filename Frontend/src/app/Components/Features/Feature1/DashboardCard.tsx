@@ -10,8 +10,7 @@ const DashboardCard: React.FC = () => {
         background: "#fff",
         border: "1px solid #ececec",
         borderRadius: "12px",
-        boxShadow:
-          "inset 0 2px 12px 0 rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06)",
+        
         padding: "24px 20px",
         margin: 0,
         position: "relative",

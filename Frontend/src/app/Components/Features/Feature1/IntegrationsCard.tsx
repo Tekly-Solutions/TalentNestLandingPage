@@ -14,7 +14,6 @@ const GrainyBullet: React.FC<{
       marginRight: "12px",
       borderRadius: "50%",
       overflow: "hidden",
-      boxShadow,
     }}
   >
     <span
@@ -24,7 +23,7 @@ const GrainyBullet: React.FC<{
         width: "100%",
         height: "100%",
         borderRadius: "50%",
-        background: gradient,
+
         opacity: 0.25,
       }}
     />
@@ -68,9 +67,6 @@ const IntegrationsCard: React.FC = () => (
   <Card
     className="integrations-card"
     style={{
-      background: "#fff",
-      border: "1px solid #ececec",
-      borderRadius: "16px",
       padding: "28px 24px 24px 24px",
       margin: 0,
       position: "relative",
@@ -140,7 +136,7 @@ const IntegrationsCard: React.FC = () => (
         letterSpacing: "-0.5px",
       }}
     >
-      No More Attendance Headaches
+      “Know more. Manage better.”
     </h3>
     <ul
       style={{
@@ -155,55 +151,21 @@ const IntegrationsCard: React.FC = () => (
       <li
         style={{ display: "flex", alignItems: "center", marginBottom: "8px" }}
       >
-        <GrainyBullet
-          gradient="linear-gradient(135deg, #ffe066 60%, #ffb300 100%)"
-          boxShadow="0 2px 6px rgba(255,224,102,0.18)"
-          filterId="noise-bullet1"
-        />
-        Buddy-punching?{" "}
-        <span style={{ color: "#222", fontWeight: 600, marginLeft: 4 }}>
-          Eliminated.
-        </span>
+        The admin dashboard gives you complete visibility over your workforce —
+        view who’s checked in, track late arrivals, analyze work hours, and
+        ensure compliance with site-specific geofences. Visual insights and
+        exportable reports make it easy to manage productivity and attendance
+        trends at a glance.
       </li>
       <li
         style={{ display: "flex", alignItems: "center", marginBottom: "8px" }}
-      >
-        <GrainyBullet
-          gradient="linear-gradient(135deg, #ffd93d 60%, #bfa100 100%)"
-          boxShadow="0 2px 6px rgba(255,217,61,0.18)"
-          filterId="noise-bullet2"
-        />
-        Unknown clock-ins from outside work-zone?{" "}
-        <span style={{ color: "#222", fontWeight: 600, marginLeft: 4 }}>
-          Gone.
-        </span>
-      </li>
+      ></li>
       <li
         style={{ display: "flex", alignItems: "center", marginBottom: "8px" }}
-      >
-        <GrainyBullet
-          gradient="linear-gradient(135deg, #90ee90 60%, #43a047 100%)"
-          boxShadow="0 2px 6px rgba(144,238,144,0.18)"
-          filterId="noise-bullet3"
-        />
-        Manual attendance logs?{" "}
-        <span style={{ color: "#222", fontWeight: 600, marginLeft: 4 }}>
-          Automated.
-        </span>
-      </li>
+      ></li>
       <li
         style={{ display: "flex", alignItems: "center", marginBottom: "8px" }}
-      >
-        <GrainyBullet
-          gradient="linear-gradient(135deg, #90caf9 60%, #1976d2 100%)"
-          boxShadow="0 2px 6px rgba(144,202,249,0.18)"
-          filterId="noise-bullet4"
-        />
-        HR audits and discrepancies?{" "}
-        <span style={{ color: "#222", fontWeight: 600, marginLeft: 4 }}>
-          Reduced.
-        </span>
-      </li>
+      ></li>
     </ul>
     <div
       style={{
@@ -224,8 +186,27 @@ const IntegrationsCard: React.FC = () => (
           fontWeight: 500,
         }}
       >
+        Data-driven decisions backed by real-time insights.
         <span>
-          <CircularBackButton />
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{
+              opacity: 1,
+              filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6))",
+            }}
+          >
+            <path
+              d="M9 6L15 12L9 18"
+              stroke="#FFFFFF"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
         </span>
       </a>
     </div>

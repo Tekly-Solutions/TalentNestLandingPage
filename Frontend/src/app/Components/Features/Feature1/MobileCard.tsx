@@ -17,14 +17,12 @@ const Card: React.FC<CardProps> = ({ children, className, style }) => (
 const MobileCard = () => (
   <>
     <Card
-      className="mobile-card"
+      className="mobile-card p-4 sm:p-6 md:p-8 lg:p-6 xl:p-5"
       style={{
         background: "#fff",
         border: "1px solid #ececec",
         borderRadius: "12px",
-        boxShadow:
-          "inset 0 2px 12px 0 rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06)",
-        padding: "24px 20px",
+
         margin: 0,
         position: "relative",
         width: "auto",
@@ -34,9 +32,8 @@ const MobileCard = () => (
       }}
     >
       <h3
+        className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-center italic text-black"
         style={{
-          fontSize: "24px",
-          fontWeight: 700,
           marginBottom: "16px",
           color: "#000",
           fontStyle: "italic",
@@ -46,7 +43,7 @@ const MobileCard = () => (
         "Attendance in one tap"
       </h3>
 
-      <p style={{ fontSize: "15px", lineHeight: 1.6, color: "#333" }}>
+      <p className="text-sm sm:text-base leading-relaxed text-gray-700">
         With a single tap, employees can punch in or out through the mobile app
         the camera opens automatically, performs facial verification, and
         records the time and location instantly. No complex steps, no wasted
@@ -55,12 +52,10 @@ const MobileCard = () => (
 
       <span className="attendance-effortless">Attendance made effortless→</span>
 
-      <div style={{ marginTop: "20px", textAlign: "center" }}>
+      <div className="mt-4 sm:mt-6 md:mt-8 text-center">
         <div
-          className="grainy-parallax-card"
+          className="grainy-parallax-card inline-block w-32 sm:w-36 md:w-40"
           style={{
-            display: "inline-block",
-            width: "160px",
             background: `linear-gradient(135deg, #fff9c4 0%, #ffe066 50%, #ffb300 100%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.9'/%3E%3C/svg%3E")`,
             borderRadius: "22px",
             padding: "10px",
@@ -70,7 +65,6 @@ const MobileCard = () => (
             overflow: "hidden",
             backgroundBlendMode: "multiply, lighten",
             backgroundAttachment: "fixed",
-            marginTop: "60px",
           }}
           onMouseMove={(e) => {
             const card = e.currentTarget;
@@ -111,7 +105,7 @@ const MobileCard = () => (
                 numOctaves="2"
                 seed="2"
               />
-              <feColorMatrix type="saturate" values="0.2" />
+              <feColorMatrix type="saturate" values="0" />
             </filter>
             <rect width="160" height="280" filter="url(#grain)" />
           </svg>
@@ -121,32 +115,23 @@ const MobileCard = () => (
               marginTop: "10px",
               height: "260px",
               borderRadius: "20px",
-              margin: "0 auto",
-              
+              margin: "0 0 0 0px",
+
               position: "relative",
               zIndex: 2,
             }}
           >
             <div
+              className="scale-[0.29] sm:scale-[0.4] md:scale-[0.46] lg:scale-[0.5]"
               style={{
-                transform: "scale(0.46)",
-                transformOrigin: "top center",
+                transformOrigin: "top left",
               }}
             >
               <FaceRecognitionUI />
             </div>
           </div>
         </div>
-        <div
-          style={{
-            marginTop: "20px",
-            display: "flex",
-            flexDirection: "row",
-            gap: "15px",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
           <a
             href="https://apps.apple.com/app/idXXXXXXXXX"
             target="_blank"
@@ -154,13 +139,13 @@ const MobileCard = () => (
             style={{
               background: `linear-gradient(135deg, #fff9c4 0%, #ffe066 50%, #ffb300 100%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.9'/%3E%3C/svg%3E")`,
               borderRadius: "6px",
-              padding: "6px 12px",
-              fontSize: "10px",
+              padding: "8px 16px",
+              fontSize: "12px",
               fontWeight: 600,
               boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)",
               display: "inline-flex",
               alignItems: "center",
-              gap: "6px",
+              gap: "8px",
               textDecoration: "none",
               color: "#000",
               backgroundBlendMode: "multiply, lighten",
@@ -179,13 +164,13 @@ const MobileCard = () => (
             style={{
               background: `linear-gradient(135deg, #fff9c4 0%, #ffe066 50%, #ffb300 100%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.9'/%3E%3C/svg%3E")`,
               borderRadius: "6px",
-              padding: "6px 12px",
-              fontSize: "10px",
+              padding: "8px 16px",
+              fontSize: "12px",
               fontWeight: 600,
               boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)",
               display: "inline-flex",
               alignItems: "center",
-              gap: "6px",
+              gap: "8px",
               textDecoration: "none",
               color: "#000",
               backgroundBlendMode: "multiply, lighten",
