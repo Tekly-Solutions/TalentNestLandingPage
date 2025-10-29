@@ -56,7 +56,7 @@ const RequestDemoSection: React.FC = () => {
         </p>
         <DemoForm />
         <p className="text-white/60 text-xs mt-6 max-w-xs mx-auto">
-          By submitting your information, you agree to Lattice;s{" "}
+          By submitting your information, you agree to Tekly's{" "}
           <a href="#" className="underline text-white">
             Terms of Service ⯈
           </a>{" "}
@@ -64,7 +64,7 @@ const RequestDemoSection: React.FC = () => {
           <a href="#" className="underline text-white">
             Privacy Policy ⯈
           </a>
-          . You can opt out anytime.
+          . You can optout anytime.
         </p>
         <div className="mt-4 text-xs text-white/70">
           <span>Not ready for a demo? </span>
@@ -73,9 +73,8 @@ const RequestDemoSection: React.FC = () => {
           </a>
         </div>
         <p className="text-white/40 text-[11px] mt-4 max-w-xs mx-auto">
-          *Lattice HRIS and Payroll is currently available for US-based
-          businesses. Limited HRIS beta testing is available in the UK, not
-          including Payroll at this time.
+          *Teklys HRIS and Payroll is currently available for UK-based
+          businesses. Limited HRIS beta testing is available in the UK.
         </p>
       </GradientPanel>
     </section>

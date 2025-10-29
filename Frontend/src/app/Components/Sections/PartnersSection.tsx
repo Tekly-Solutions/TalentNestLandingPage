@@ -24,24 +24,24 @@ const PartnersSection: React.FC = () => {
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
           <div className="text-center">
-            <div className="text-3xl font-bold text-teal-600 mb-2">30,000+</div>
+            <div className="text-3xl font-bold text-white mb-2">30,000+</div>
             <div className="text-white">companies</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-teal-600 mb-2">400M</div>
+            <div className="text-3xl font-bold text-white mb-2">400M</div>
             <div className="text-white">people</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-teal-600 mb-2">2.1M</div>
+            <div className="text-3xl font-bold text-white mb-2">2.1M</div>
             <div className="text-white">hires</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-teal-600 mb-2">100+</div>
+            <div className="text-3xl font-bold text-white mb-2">100+</div>
             <div className="text-white">countries</div>
           </div>
         </div>
         <div className="mt-8 text-center">
-          <div className="text-4xl font-bold text-teal-600 mb-2">98%</div>
+          <div className="text-4xl font-bold text-white mb-2">98%</div>
           <div className="text-white">satisfaction</div>
         </div>
       </div>

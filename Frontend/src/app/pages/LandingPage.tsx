@@ -12,7 +12,7 @@ const LandingPage: React.FC = () => {
     <>
     
       <NavBar />
-      <HeaderSection/>
+      
       <RequestDemoPage />
       
       <Feature1 />

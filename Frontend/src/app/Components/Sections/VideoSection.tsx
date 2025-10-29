@@ -204,10 +204,10 @@ const VideoSection: React.FC = () => {
                   </div>
                 </div>
                 <div className="mt-3">
-                  <h4 className="text-sm font-semibold text-slate-900 group-hover:text-teal-medium transition-colors">
+                  <h4 className="text-sm font-semibold text-slate-900 group-hover:text-teal-medium transition-colors bg-white rounded-2xl px-3 py-1 shadow-sm text-center">
                     {video.title}
                   </h4>
-                  <p className="text-xs text-slate-600 mt-1">
+                  <p className="text-xs text-white mt-1 text-center">
                     {video.description}
                   </p>
                 </div>
@@ -237,10 +237,10 @@ const VideoSection: React.FC = () => {
                   </div>
                 </div>
                 <div className="mt-3">
-                  <h4 className="text-sm font-semibold text-slate-900 group-hover:text-teal-medium transition-colors">
+                  <h4 className="text-sm font-semibold text-slate-900 group-hover:text-teal-medium transition-colors bg-white rounded-2xl px-3 py-1 shadow-sm text-center">
                     {video.title}
                   </h4>
-                  <p className="text-xs text-slate-600 mt-1">
+                  <p className="text-xs text-white mt-1 text-center">
                     {video.description}
                   </p>
                 </div>

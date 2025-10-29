@@ -85,3 +85,16 @@ body {
 .animate-scroll-right-to-left {
   animation: scroll-right-to-left 20s linear infinite;
 }
+
+/* Animated gradient border for footer */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
