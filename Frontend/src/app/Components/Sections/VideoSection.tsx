@@ -139,7 +139,7 @@ const VideoSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full max-w-[1200px] mx-auto mt-8 mb-12 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative w-full max-w-[1200px] mx-auto mt-20 mb-12 px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
       <div className="flex justify-center items-center">
         {/* YouTube Video */}
