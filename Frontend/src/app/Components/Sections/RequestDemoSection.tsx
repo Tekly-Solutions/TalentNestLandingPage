@@ -74,9 +74,8 @@ const RequestDemoSection: React.FC = () => {
           </a>
         </div>
         <p className="text-white/40 text-[11px] mt-4 max-w-xs mx-auto">
-          *Lattice HRIS and Payroll is currently available for US-based
-          businesses. Limited HRIS beta testing is available in the UK, not
-          including Payroll at this time.
+          *Teklys HRIS and Payroll is currently available for UK-based
+          businesses. Limited HRIS beta testing is available in the UK.
         </p>
       </GradientPanel>
     </section>

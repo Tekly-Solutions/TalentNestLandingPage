@@ -2,69 +2,115 @@ import React from "react";
 import Card from "./Card";
 import RatingCircle from "./RatingCircle";
 
-const RatingsCard: React.FC = () => (
-  <Card
-    className="ratings-card"
-    style={{
-      background: "#fff",
-      border: "1px solid #ececec",
-      borderRadius: "12px",
-      boxShadow:
-        "inset 0 2px 12px 0 rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06)",
-      padding: "24px 20px",
-      margin: 0,
-      position: "relative",
-      width: "auto",
-      minHeight: "unset",
-      maxWidth: "100%",
-    }}
-  >
-    <div
+interface RatingsCardProps {
+  colorScheme?: {
+    gradient: string;
+    shadow: string;
+  };
+  badgeColorScheme?: {
+    gradient: string;
+    shadow: string;
+  };
+  badgeText?: string;
+  circle1Label?: string;
+  circle1Sentence?: string;
+  circle2Label?: string;
+  circle2Sentence?: string;
+  circle3Label?: string;
+  circle3Sentence?: string;
+  circle4Label?: string;
+  circle4Sentence?: string;
+}
+
+const RatingsCard: React.FC<RatingsCardProps> = ({ 
+  colorScheme, 
+  badgeColorScheme,
+  badgeText = "No More Attendance Headaches",
+  circle1Label = "Eliminated",
+  circle1Sentence = "Buddy-punching?",
+  circle2Label = "Automated.",
+  circle2Sentence = "Manual attendance logs?",
+  circle3Label = "Gone.",
+  circle3Sentence = "Unknown clock-ins from outside work-zone?",
+  circle4Label = "Reduced",
+  circle4Sentence = "HR audits and discrepancies?"
+}) => {
+  const defaultColors = {
+    gradient: "linear-gradient(90deg, #ffe066 0%, #ffb300 50%, #bfa100 100%)",
+    shadow: "rgba(255,224,102,0.12)",
+  };
+
+  const colors = colorScheme || defaultColors;
+  const badgeColors = badgeColorScheme || { gradient: "#ffd700", shadow: "" };
+
+  return (
+    <Card
+      className="ratings-card"
       style={{
-        display: "inline-block",
-        background: "#ffd700",
-        color: "#000",
-        padding: "8px 20px",
-        borderRadius: "20px",
-        fontSize: "13px",
-        fontWeight: 600,
-        marginBottom: "30px",
+        background: "#fff",
+        border: "1px solid #ececec",
+        borderRadius: "12px",
+        boxShadow:
+          "inset 0 2px 12px 0 rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06)",
+        padding: "24px 20px",
+        margin: 0,
+        position: "relative",
+        width: "auto",
+        minHeight: "unset",
+        maxWidth: "100%",
       }}
     >
-      No More Attendance Headaches
-    </div>
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "140px 140px",
-        gridRowGap: "6px",
-        gridColumnGap: "6px",
-        marginTop: "6px",
-        justifyContent: "center",
-      }}
-    >
-      <RatingCircle
-        label="Eliminated"
-        borderRadius="0px 20px 0px 20px"
-        sentence="Buddy-punching?"
-      />
-      <RatingCircle
-        label="Automated."
-        borderRadius="20px 0px 20px 0px"
-        sentence="Manual attendance logs?"
-      />
-      <RatingCircle
-        label="Gone."
-        borderRadius="20px 0px 20px 0px"
-        sentence="Unknown clock-ins from outside work-zone?"
-      />
-      <RatingCircle
-        label="Reduced"
-        borderRadius="0px 20px 0px 20px"
-        sentence="HR audits and discrepancies?"
-      />
-    </div>
-  </Card>
-);
+      <div
+        style={{
+          display: "inline-block",
+          background: badgeColors.gradient,
+          color: badgeColorScheme ? "#fff" : "#000",
+          padding: "8px 20px",
+          borderRadius: "20px",
+          fontSize: "13px",
+          fontWeight: 600,
+          marginBottom: "30px",
+        }}
+      >
+        {badgeText}
+      </div>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "140px 140px",
+          gridRowGap: "6px",
+          gridColumnGap: "6px",
+          marginTop: "6px",
+          justifyContent: "center",
+        }}
+      >
+        <RatingCircle
+          label={circle1Label}
+          borderRadius="0px 20px 0px 20px"
+          sentence={circle1Sentence}
+          colorScheme={colorScheme}
+        />
+        <RatingCircle
+          label={circle2Label}
+          borderRadius="20px 0px 20px 0px"
+          sentence={circle2Sentence}
+          colorScheme={colorScheme}
+        />
+        <RatingCircle
+          label={circle3Label}
+          borderRadius="20px 0px 20px 0px"
+          sentence={circle3Sentence}
+          colorScheme={colorScheme}
+        />
+        <RatingCircle
+          label={circle4Label}
+          borderRadius="0px 20px 0px 20px"
+          sentence={circle4Sentence}
+          colorScheme={colorScheme}
+        />
+      </div>
+    </Card>
+  );
+};
 
 export default RatingsCard;

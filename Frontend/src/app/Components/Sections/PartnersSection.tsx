@@ -41,7 +41,7 @@ const PartnersSection: React.FC = () => {
           </div>
         </div>
         <div className="mt-8 text-center">
-          <div className="text-4xl font-bold text-teal-600 mb-2">98%</div>
+          <div className="text-4xl font-bold text-white mb-2">98%</div>
           <div className="text-white">satisfaction</div>
         </div>
       </div>

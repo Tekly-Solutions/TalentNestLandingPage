@@ -63,154 +63,146 @@ import React from "react";
 import Card from "./Card";
 import CircularBackButton from "./ArrowButton";
 
-const IntegrationsCard: React.FC = () => (
-  <Card
-    className="integrations-card"
-    style={{
-      padding: "28px 24px 24px 24px",
-      margin: 0,
-      position: "relative",
-      width: "auto",
-      minHeight: "unset",
-      maxWidth: "100%",
-      overflow: "hidden",
-    }}
-  >
-    {/* Gradient header bar */}
-    <div
+interface IntegrationsCardProps {
+  colorScheme?: {
+    gradient: string;
+    shadow: string;
+  };
+  title?: string;
+  description?: string;
+}
+
+const IntegrationsCard: React.FC<IntegrationsCardProps> = ({ 
+  colorScheme,
+  title = "Know more. Manage better.",
+  description = "The admin dashboard gives you complete visibility over your workforce — view who's checked in, track late arrivals, analyze work hours, and ensure compliance with site-specific geofences. Visual insights and exportable reports make it easy to manage productivity and attendance trends at a glance."
+}) => {
+  const defaultColors = {
+    gradient: "linear-gradient(90deg, #ffe066 0%, #ffb300 50%, #bfa100 100%)",
+    shadow: "rgba(255,224,102,0.12)",
+  };
+
+  const colors = colorScheme || defaultColors;
+
+  return (
+    <Card
+      className="integrations-card"
       style={{
-        width: "100%",
-        height: "14px",
-        borderRadius: "10px",
+        padding: "28px 24px 24px 24px",
+        margin: 0,
         position: "relative",
-        marginBottom: "18px",
+        width: "auto",
+        minHeight: "unset",
+        maxWidth: "100%",
         overflow: "hidden",
-        boxShadow: "0 2px 8px rgba(255,224,102,0.12)",
       }}
     >
-      {/* Gradient background */}
+      {/* Gradient header bar */}
       <div
         style={{
-          position: "absolute",
-          inset: 0,
           width: "100%",
-          height: "100%",
-          background:
-            "linear-gradient(90deg, #ffe066 0%, #ffb300 50%, #bfa100 100%)",
-          opacity: 0.25,
-        }}
-      />
-      {/* SVG noise overlay for grainy effect */}
-      <svg
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          opacity: 0.18,
-          pointerEvents: "none",
+          height: "14px",
           borderRadius: "10px",
+          position: "relative",
+          marginBottom: "18px",
+          overflow: "hidden",
+          boxShadow: `0 2px 8px ${colors.shadow}`,
         }}
-        viewBox="0 0 400 14"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
       >
-        <filter id="noise-bar" x="0" y="0">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="1.2"
-            numOctaves="2"
-            seed="3"
-          />
-        </filter>
-        <rect width="400" height="14" filter="url(#noise-bar)" />
-      </svg>
-    </div>
-    <h3
-      style={{
-        fontSize: "24px",
-        fontWeight: 700,
-        marginBottom: "14px",
-        color: "#000",
-        textAlign: "center",
-        letterSpacing: "-0.5px",
-      }}
-    >
-      “Know more. Manage better.”
-    </h3>
-    <ul
-      style={{
-        fontSize: "16px",
-        lineHeight: 1.9,
-        color: "#222",
-        paddingLeft: "0px",
-        marginBottom: 0,
-        listStyle: "none",
-      }}
-    >
-      <li
-        style={{ display: "flex", alignItems: "center", marginBottom: "8px" }}
-      >
-        The admin dashboard gives you complete visibility over your workforce —
-        view who’s checked in, track late arrivals, analyze work hours, and
-        ensure compliance with site-specific geofences. Visual insights and
-        exportable reports make it easy to manage productivity and attendance
-        trends at a glance.
-      </li>
-      <li
-        style={{ display: "flex", alignItems: "center", marginBottom: "8px" }}
-      ></li>
-      <li
-        style={{ display: "flex", alignItems: "center", marginBottom: "8px" }}
-      ></li>
-      <li
-        style={{ display: "flex", alignItems: "center", marginBottom: "8px" }}
-      ></li>
-    </ul>
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "flex-end",
-        marginTop: "2px",
-      }}
-    >
-      <a
-        href="#"
+        {/* Gradient background */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            background: colors.gradient,
+            opacity: 0.25,
+          }}
+        />
+      </div>
+      <h3
         style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: "8px",
-          fontSize: "15px",
+          fontSize: "24px",
+          fontWeight: 700,
+          marginBottom: "14px",
           color: "#000",
-          textDecoration: "none",
-          fontWeight: 500,
+          textAlign: "center",
+          letterSpacing: "-0.5px",
         }}
       >
-        Data-driven decisions backed by real-time insights.
-        <span>
-          <svg
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{
-              opacity: 1,
-              filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6))",
-            }}
-          >
-            <path
-              d="M9 6L15 12L9 18"
-              stroke="#FFFFFF"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </span>
-      </a>
-    </div>
-  </Card>
-);
+        "{title}"
+      </h3>
+      <ul
+        style={{
+          fontSize: "16px",
+          lineHeight: 1.9,
+          color: "#222",
+          paddingLeft: "0px",
+          marginBottom: 0,
+          listStyle: "none",
+        }}
+      >
+        <li
+          style={{ display: "flex", alignItems: "center", marginBottom: "8px" }}
+        >
+          {description}
+        </li>
+        <li
+          style={{ display: "flex", alignItems: "center", marginBottom: "8px" }}
+        ></li>
+        <li
+          style={{ display: "flex", alignItems: "center", marginBottom: "8px" }}
+        ></li>
+        <li
+          style={{ display: "flex", alignItems: "center", marginBottom: "8px" }}
+        ></li>
+      </ul>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          marginTop: "2px",
+        }}
+      >
+        <a
+          href="#"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
+            fontSize: "15px",
+            color: "#000",
+            textDecoration: "none",
+            fontWeight: 500,
+          }}
+        >
+          Data-driven decisions backed by real-time insights.
+          <span>
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{
+                opacity: 1,
+                filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6))",
+              }}
+            >
+              <path
+                d="M9 6L15 12L9 18"
+                stroke="#FFFFFF"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </Card>
+  );
+};
 
 export default IntegrationsCard;

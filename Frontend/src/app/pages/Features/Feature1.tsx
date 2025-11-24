@@ -12,7 +12,7 @@ import SecurityCard from "../../Components/Features/Feature1/SecurityCard";
 const Feature1: React.FC = () => {
   return (
     <main
-      className="w-full text-slate-900 mt-12 mb-8 p-4 sm:p-6 md:p-8 relative pb-28 flex items-center justify-center min-h-[80vh]"
+      className="w-full text-slate-900 p-4 sm:p-6 md:p-8 relative pb-28 flex items-center justify-center min-h-[80vh]"
       style={{
         position: "relative",
         zIndex: 1,
@@ -24,32 +24,6 @@ const Feature1: React.FC = () => {
         borderRadius: 0,
       }}
     >
-      {/* Gradient border overlay - Top */}
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: "8px",
-          zIndex: 0,
-          // background: "linear-gradient(90deg, #ffe066, #ffb300, #bfa100)",
-          pointerEvents: "none",
-        }}
-      />
-      {/* Gradient border overlay - Bottom */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: "8px",
-          zIndex: 0,
-          // background: "linear-gradient(90deg, #ffe066, #ffb300, #bfa100)",
-          pointerEvents: "none",
-        }}
-      />
       {/* Floating HeadButton */}
       <div
         style={{

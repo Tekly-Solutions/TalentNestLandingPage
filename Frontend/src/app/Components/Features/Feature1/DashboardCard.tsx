@@ -2,7 +2,27 @@ import React from "react";
 import Card from "./Card";
 import BarItem from "./BarItem";
 
-const DashboardCard: React.FC = () => {
+interface DashboardCardProps {
+  colorScheme?: {
+    gradient: string;
+    shadow: string;
+  };
+  title?: string;
+  description?: string;
+}
+
+const DashboardCard: React.FC<DashboardCardProps> = ({ 
+  colorScheme, 
+  title = "Your face is your ID",
+  description = "Secure attendance starts with a smile. Our advanced AI-powered face recognition verifies each employee's identity instantly, ensuring only authorized team members can punch in or out. No more buddy punching, shared IDs, or attendance fraud just fast, accurate, touchless verification that's uniquely yours."
+}) => {
+  const defaultColors = {
+    gradient: "linear-gradient(135deg, #fff9c4 0%, #ffe066 50%, #ffb300 100%)",
+    shadow: "rgba(255,224,102,0.12)",
+  };
+
+  const colors = colorScheme || defaultColors;
+
   return (
     <Card
       className="dashboard-card"
@@ -10,7 +30,7 @@ const DashboardCard: React.FC = () => {
         background: "#fff",
         border: "1px solid #ececec",
         borderRadius: "12px",
-        
+
         padding: "24px 20px",
         margin: 0,
         position: "relative",
@@ -33,14 +53,10 @@ const DashboardCard: React.FC = () => {
           textAlign: "center",
         }}
       >
-        “Your face is your ID”
+        "{title}"
       </h3>
       <p style={{ fontSize: "15px", lineHeight: 1.6, color: "#333" }}>
-        Secure attendance starts with a smile. Our advanced AI-powered face
-        recognition verifies each employee’s identity instantly, ensuring only
-        authorized team members can punch in or out. No more buddy punching,
-        shared IDs, or attendance fraud just fast, accurate, touchless
-        verification that’s uniquely yours.
+        {description}
       </p>
       <div style={{ marginTop: "30px", position: "relative" }}>
         <div
@@ -52,7 +68,7 @@ const DashboardCard: React.FC = () => {
             padding: "20px 15px 0",
             boxShadow: "none",
             position: "relative",
-            background: `linear-gradient(135deg, #fff9c4 0%, #ffe066 50%, #ffb300 100%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.9'/%3E%3C/svg%3E")`,
+            backgroundImage: `${colors.gradient}, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.9'/%3E%3C/svg%3E")`,
             backgroundBlendMode: "multiply, lighten",
             backgroundAttachment: "fixed",
             zIndex: 1,
@@ -77,7 +93,7 @@ const DashboardCard: React.FC = () => {
               padding: "10px 10px 10px 10px",
               borderRadius: "24px 0 24px 0px",
               background: "#fff",
-              
+
               marginBottom: "18px",
             }}
           >

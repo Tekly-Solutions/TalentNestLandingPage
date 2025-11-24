@@ -2,7 +2,11 @@
 
 import React, { useState, useRef, CSSProperties } from "react";
 
-const NavButton: React.FC = () => {
+interface NavButtonProps {
+  onClick?: () => void;
+}
+
+const NavButton: React.FC<NavButtonProps> = ({ onClick }) => {
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({
     x: 0,
     y: 0,
@@ -92,6 +96,10 @@ const NavButton: React.FC = () => {
     target.style.color = "white";
   };
 
+  const handleClick = () => {
+    if (onClick) onClick();
+  };
+
   return (
     <div
       ref={buttonRef}
@@ -105,6 +113,7 @@ const NavButton: React.FC = () => {
         style={innerButtonStyle}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onClick={handleClick}
       >
         <span>Start Free Trial</span>
       </div>
