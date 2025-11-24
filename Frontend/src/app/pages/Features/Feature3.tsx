@@ -91,6 +91,8 @@ const Feature3: React.FC = () => {
               description={
                 "An interactive React Flow canvas for building and visualizing reporting relationships. Drag members from pools, nest teams, annotate connections inline, and preview layout changes in real time, then save snapshots for audit or rollback during restructures."
               }
+              imageSrc={'/Canvas.png'}
+              showPipeline={false}
             />
             <IntegrationsCard
               colorScheme={greenColorScheme}
@@ -108,6 +110,7 @@ const Feature3: React.FC = () => {
               "Intuitive drag‑and‑drop placement from pools to canvas, connect nodes to define workflows, edit edge labels inline, and turn visual maps into actionable processes that stay in sync with your org data."
             }
             footerText={"One canvas. Zero guesswork."}
+            imageSrc={'/Workflow3.png'}
           />
         </div>
 
