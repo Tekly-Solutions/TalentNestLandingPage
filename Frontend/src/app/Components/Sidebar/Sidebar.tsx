@@ -66,14 +66,14 @@ const Sidebar: React.FC = () => {
             className="text-[7px] sm:text-[8px] font-semibold text-gray-700 hover:text-teal-600 transition-colors duration-200 transform -rotate-90 whitespace-nowrap cursor-pointer relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-gradient-to-r after:from-teal-400 after:to-teal-600 after:transition-all after:duration-300 hover:after:w-full"
             style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
           >
-            Feature 2
+           Management
           </button>
           <button
             onClick={() => scrollToSection("feature3")}
             className="text-[7px] sm:text-[8px] font-semibold text-gray-700 hover:text-teal-600 transition-colors duration-200 transform -rotate-90 whitespace-nowrap cursor-pointer relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-gradient-to-r after:from-teal-400 after:to-teal-600 after:transition-all after:duration-300 hover:after:w-full"
             style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
           >
-            Feature 3
+            Hierarchy 
           </button>
           <button
             onClick={() => scrollToSection("welcome")}

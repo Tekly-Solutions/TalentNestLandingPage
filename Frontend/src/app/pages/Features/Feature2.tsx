@@ -80,9 +80,12 @@ const Feature2: React.FC = () => {
       >
         {/* Hero Section */}
         <HeroSection
-          title="Goodbye admin overload"
-          subtitle="Hello! effortless control"
-          description="Control your company's structure with our Organization Management Module. Define roles, create hierarchies, and manage branches securely."
+          {...({
+            title: "Goodbye admin overload",
+            subtitle: "Hello! effortless control",
+            description:
+              "Control your company's structure with our Organization Management Module. Define roles, create hierarchies, and manage branches securely.",
+          } as any)}
         />
 
         {/* Custom Row: Two cards left, one card right */}

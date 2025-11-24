@@ -153,19 +153,19 @@ const Feature3: React.FC = () => {
             badgeText={"Visualize, Organize, Empower"}
             circle1Label={"Groups"}
             circle1Sentence={
-              "Organize teams into compact group cards with member counts, badges, and expandable member lists."
+              "Organize teams into compact group cards."
             }
             circle2Label={"Employees"}
             circle2Sentence={
-              "Find people instantly with search and drag them onto the canvas; avatars and role labels provide at-a-glance clarity."
+              "Find people instantly with search and drag them onto the canvas."
             }
             circle3Label={"Workflows"}
             circle3Sentence={
-              "Visual workflow cards summarize connections and actions — edit labels inline or open the workflow modal for details."
+              "Visual workflow cards summarize."
             }
-            circle4Label={"Canvas Tools"}
+            circle4Label={"Canvas"}
             circle4Sentence={
-              "Toolbar and React Flow controls (undo/redo, mini-map, save) let you fine-tune layouts and preserve snapshots for audits."
+              "Toolbar and React Flow controls."
             }
           />
           {/* Talent Nest Logo */}
