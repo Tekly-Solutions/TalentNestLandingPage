@@ -7,7 +7,7 @@ const HeroSection: React.FC = () => (
         fontSize: "52px",
         fontWeight: 500,
         marginBottom: "2px",
-        color: "#000",
+        color: "#fff",
         lineHeight: 1.1,
       }}
     >
@@ -18,7 +18,7 @@ const HeroSection: React.FC = () => (
     <p
       style={{
         fontSize: "16px",
-        color: "#333",
+        color: "#fff",
         maxWidth: "580px",
         margin: "0 auto",
         lineHeight: 1.5,

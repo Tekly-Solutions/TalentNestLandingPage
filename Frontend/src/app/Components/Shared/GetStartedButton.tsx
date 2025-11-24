@@ -68,7 +68,7 @@ const GetStartedButton: React.FC<GetStartedButtonProps> = ({
           zIndex: 1,
         }}
       ></div>
-      
+
       <button
         type={type}
         onClick={onClick}

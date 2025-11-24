@@ -3,7 +3,7 @@ import React from "react";
 type Props = {
   onClick?: () => void;
   ariaLabel?: string;
-  size?: number; 
+  size?: number;
 };
 
 const RoundedShadowButton: React.FC<Props> = ({
@@ -32,7 +32,6 @@ const RoundedShadowButton: React.FC<Props> = ({
           backdropFilter: "blur(10px)",
         }}
       />
-
     </button>
   );
 };

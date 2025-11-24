@@ -9,9 +9,9 @@ import MobileStickyCTAs from "./MobileStickyCTAs";
 
 const NavBar: React.FC = () => {
   const scrollToDemo = () => {
-    const demoSection = document.getElementById('welcome');
+    const demoSection = document.getElementById("welcome");
     if (demoSection) {
-      demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      demoSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 

@@ -60,12 +60,19 @@ export async function POST(request: Request) {
     let EMBED_LOGO_DATA_URL: string | null = null;
     if (!LOGO_SRC) {
       try {
-        const logoPath = path.join(process.cwd(), "public", "Talent Nest logo only.png");
+        const logoPath = path.join(
+          process.cwd(),
+          "public",
+          "Talent Nest logo only.png"
+        );
         const fileBuf = fs.readFileSync(logoPath);
         const b64 = fileBuf.toString("base64");
         EMBED_LOGO_DATA_URL = `data:image/png;base64,${b64}`;
       } catch (e) {
-        console.warn("Logo file not found or unreadable, falling back to text header.", e);
+        console.warn(
+          "Logo file not found or unreadable, falling back to text header.",
+          e
+        );
       }
     }
     const logoImgTag = EMBED_LOGO_DATA_URL

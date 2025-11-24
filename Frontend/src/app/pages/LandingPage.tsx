@@ -5,6 +5,7 @@ import FooterPage from "./FooterPage";
 import React from "react";
 import PartnersSection from "../Components/Sections/PartnersSection";
 import Feature1 from "./Features/Feature1";
+import Feature2 from "./Features/Feature2";
 import HeaderSection from "../Components/Sections/HeaderSection";
 import HeroSection from "../Components/Sections/HeaderSection/HeroSection";
 
@@ -16,8 +17,8 @@ const LandingPage: React.FC = () => {
       <RequestDemoPage />
 
       <Feature1 />
-      <VideoSection />
-      <Feature1 />
+      
+      <Feature2 />
       <PartnersSection />
       <FooterPage />
     </>
