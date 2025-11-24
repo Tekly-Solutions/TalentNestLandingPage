@@ -12,10 +12,10 @@ interface SecurityCardProps {
   description?: string;
 }
 
-const SecurityCard: React.FC<SecurityCardProps> = ({ 
+const SecurityCard: React.FC<SecurityCardProps> = ({
   colorScheme,
   title = "Built for trust and protection",
-  description = "TalentNest ensures your employee data is encrypted, protected, and fully compliant with modern security standards. Every punch-in, location ping, and face scan is logged in a secure audit trail, giving you accountability and transparency across the system."
+  description = "TalentNest ensures your employee data is encrypted, protected, and fully compliant with modern security standards. Every punch-in, location ping, and face scan is logged in a secure audit trail, giving you accountability and transparency across the system.",
 }) => {
   const defaultColors = {
     gradient: "linear-gradient(135deg, #fff9c4 0%, #ffe066 50%, #ffb300 100%)",

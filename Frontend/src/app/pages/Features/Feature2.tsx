@@ -48,7 +48,11 @@ const Feature2: React.FC = () => {
         }}
       >
         <HeadButtonPurple>
-          <span style={{ color: "#fff" }}>#Performance&nbsp;</span> Analytics
+          <span style={{ color: "#fff", fontWeight: 600 }}>#Smart</span>
+          <span style={{ color: "#fff", marginLeft: 4 }}>
+            {" "}
+            Organization Management
+          </span>
         </HeadButtonPurple>
       </div>
       <div
@@ -62,7 +66,11 @@ const Feature2: React.FC = () => {
         }}
       >
         {/* Hero Section */}
-        <HeroSection />
+        <HeroSection
+          title="Goodbye admin overload"
+          subtitle="Hello! effortless control"
+          description="Take complete control of your company's structure with our powerful Organization Management Module. From defining roles and permissions to creating multi-level hierarchies and managing branches, our system helps you build a secure, scalable, and perfectly aligned organizational framework."
+        />
 
         {/* Custom Row: Two cards left, one card right */}
         <div
@@ -75,18 +83,18 @@ const Feature2: React.FC = () => {
           }}
         >
           <div className="flex flex-col gap-2 md:gap-8">
-            <DashboardCard 
+            <DashboardCard
               colorScheme={purpleColorScheme}
               title="Role-Based Control"
               description="Effortlessly define and manage roles across your organization with a modern, intuitive interface. Categorized, searchable permissions help admins assign access with precision—whether selecting individual capabilities or applying entire permission groups in one click. Color-coded indicators, hover descriptions, and preview screens ensure accuracy before saving."
             />
-            <IntegrationsCard 
+            <IntegrationsCard
               colorScheme={purpleColorScheme}
               title="Manual Leave Governance"
               description="Handle exceptional leave scenarios with confidence. Admins can manually define leave entries through a guided interface while enforcing approval rules, mandatory justifications, and policy restrictions. Every manual leave is logged with user, timestamp, and reason for complete accountability."
             />
           </div>
-          <MobileCard 
+          <MobileCard
             colorScheme={purpleColorScheme}
             title="Dynamic Org Hierarchies"
             description="Design flexible, multi-layered org structures—functional, geographical, or project-based—with ease. Clone existing hierarchies, schedule future structural changes, and maintain full version history with restore options. Drag-and-drop role assignments, access controls, and real-time syncing ensure each node is accurate and up to date."
@@ -104,7 +112,7 @@ const Feature2: React.FC = () => {
             marginRight: "auto",
           }}
         >
-          <SecurityCard 
+          <SecurityCard
             colorScheme={purpleColorScheme}
             title="Add and Manage Company Branches"
             description="Expand your organization seamlessly by adding new branches with complete location details and assigned employees. Our intuitive interface and powerful backend ensure accurate employee-branch mapping, preventing duplicates and maintaining data integrity."
@@ -121,8 +129,8 @@ const Feature2: React.FC = () => {
             marginRight: "auto",
           }}
         >
-          <RatingsCard 
-            colorScheme={lightPurpleColorScheme} 
+          <RatingsCard
+            colorScheme={lightPurpleColorScheme}
             badgeColorScheme={purpleColorScheme}
             badgeText="Smarter Organization Management"
             circle1Label="Streamlined"
@@ -133,6 +141,7 @@ const Feature2: React.FC = () => {
             circle3Sentence="Rigid organizational hierarchies?"
             circle4Label="Centralized"
             circle4Sentence="Branch management chaos?"
+            useBlackText={true}
           />
           {/* Talent Nest Logo */}
           <div

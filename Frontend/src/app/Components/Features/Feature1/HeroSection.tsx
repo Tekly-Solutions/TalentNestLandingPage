@@ -1,6 +1,16 @@
 import React from "react";
 
-const HeroSection: React.FC = () => (
+interface HeroSectionProps {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({
+  title = "Goodbye punch cards.",
+  subtitle = "Hello! smart attendance",
+  description = "With geofence-based clock-ins and facial recognition, you can accurately track employee attendance while ensuring a secure and touchless experience.",
+}) => (
   <div style={{ textAlign: "center", marginBottom: "32px" }}>
     <h1
       style={{
@@ -11,9 +21,9 @@ const HeroSection: React.FC = () => (
         lineHeight: 1.1,
       }}
     >
-      Goodbye punch cards.
+      {title}
       <br />
-      Hello! smart attendance
+      {subtitle}
     </h1>
     <p
       style={{
@@ -24,9 +34,7 @@ const HeroSection: React.FC = () => (
         lineHeight: 1.5,
       }}
     >
-      With geofence-based clock-ins and facial recognition, you can accurately
-      track employee attendance while ensuring a secure and touchless
-      experience.
+      {description}
     </p>
   </div>
 );
