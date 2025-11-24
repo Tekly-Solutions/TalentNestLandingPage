@@ -20,10 +20,11 @@ interface RatingsCardProps {
   circle3Sentence?: string;
   circle4Label?: string;
   circle4Sentence?: string;
+  useBlackText?: boolean;
 }
 
-const RatingsCard: React.FC<RatingsCardProps> = ({ 
-  colorScheme, 
+const RatingsCard: React.FC<RatingsCardProps> = ({
+  colorScheme,
   badgeColorScheme,
   badgeText = "No More Attendance Headaches",
   circle1Label = "Eliminated",
@@ -33,7 +34,8 @@ const RatingsCard: React.FC<RatingsCardProps> = ({
   circle3Label = "Gone.",
   circle3Sentence = "Unknown clock-ins from outside work-zone?",
   circle4Label = "Reduced",
-  circle4Sentence = "HR audits and discrepancies?"
+  circle4Sentence = "HR audits and discrepancies?",
+  useBlackText = false,
 }) => {
   const defaultColors = {
     gradient: "linear-gradient(90deg, #ffe066 0%, #ffb300 50%, #bfa100 100%)",
@@ -89,24 +91,32 @@ const RatingsCard: React.FC<RatingsCardProps> = ({
           borderRadius="0px 20px 0px 20px"
           sentence={circle1Sentence}
           colorScheme={colorScheme}
+          labelColor={useBlackText ? "#000" : "white"}
+          sentenceColor={useBlackText ? "#000" : "white"}
         />
         <RatingCircle
           label={circle2Label}
           borderRadius="20px 0px 20px 0px"
           sentence={circle2Sentence}
           colorScheme={colorScheme}
+          labelColor={useBlackText ? "#000" : "white"}
+          sentenceColor={useBlackText ? "#000" : "white"}
         />
         <RatingCircle
           label={circle3Label}
           borderRadius="20px 0px 20px 0px"
           sentence={circle3Sentence}
           colorScheme={colorScheme}
+          labelColor={useBlackText ? "#000" : "white"}
+          sentenceColor={useBlackText ? "#000" : "white"}
         />
         <RatingCircle
           label={circle4Label}
           borderRadius="0px 20px 0px 20px"
           sentence={circle4Sentence}
           colorScheme={colorScheme}
+          labelColor={useBlackText ? "#000" : "white"}
+          sentenceColor={useBlackText ? "#000" : "white"}
         />
       </div>
     </Card>

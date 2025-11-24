@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import fs from "fs";
 import path from "path";
 
@@ -28,20 +28,25 @@ export async function POST(request: Request) {
       );
     }
 
-    const RESEND_API_KEY = process.env.RESEND_API_KEY;
+    const SMTP_HOST = process.env.SMTP_HOST;
+    const SMTP_PORT = process.env.SMTP_PORT || "587";
+    const SMTP_USER = process.env.SMTP_USER;
+    const SMTP_PASS = process.env.SMTP_PASS;
     const FROM_EMAIL =
-      process.env.MAIL_FROM || "TalentNest <onboarding@resend.dev>";
+      process.env.MAIL_FROM || "TalentNest <noreply@teklysolutions.com>";
     const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
 
     console.log("🔑 Config check:", {
-      hasApiKey: !!RESEND_API_KEY,
+      hasSmtpHost: !!SMTP_HOST,
+      hasSmtpUser: !!SMTP_USER,
+      hasSmtpPass: !!SMTP_PASS,
       fromEmail: FROM_EMAIL,
       adminEmail: ADMIN_EMAIL,
     });
 
-    if (!RESEND_API_KEY) {
+    if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
       return NextResponse.json(
-        { success: false, error: "RESEND_API_KEY not configured" },
+        { success: false, error: "SMTP credentials not configured" },
         { status: 500 }
       );
     }
@@ -52,7 +57,16 @@ export async function POST(request: Request) {
       );
     }
 
-    const resend = new Resend(RESEND_API_KEY);
+    // Create nodemailer transporter
+    const transporter = nodemailer.createTransport({
+      host: SMTP_HOST,
+      port: parseInt(SMTP_PORT),
+      secure: SMTP_PORT === "465", // true for 465, false for other ports
+      auth: {
+        user: SMTP_USER,
+        pass: SMTP_PASS,
+      },
+    });
 
     // Resolve local logo & embed as base64 data URI so email clients display it without external fetch.
     // If LOGO_URL env provided, prefer remote URL; else attempt to read from public folder.
@@ -346,30 +360,24 @@ export async function POST(request: Request) {
 
     console.log("📤 Sending admin email...");
     // Send to admin
-    const adminResult = await resend.emails.send({
+    await transporter.sendMail({
       from: FROM_EMAIL,
-      to: [ADMIN_EMAIL],
+      to: ADMIN_EMAIL,
       subject,
       html: adminHtml,
       replyTo: email,
     });
-    console.log("✅ Admin email sent:", adminResult);
+    console.log("✅ Admin email sent");
 
     console.log("📤 Sending client email...");
     // Send confirmation to client
-    // Note: With onboarding@resend.dev, emails can only go to the verified account
-    // Once teklysolutions.com is fully verified, this will work for any recipient
-    const clientResult = await resend.emails.send({
+    await transporter.sendMail({
       from: FROM_EMAIL,
-      to: FROM_EMAIL.includes("resend.dev") ? [ADMIN_EMAIL] : [email], // Send to admin if using test domain
-      subject: `Acknowledgment of Your TalentNest Demo Request${
-        FROM_EMAIL.includes("resend.dev")
-          ? " [TEST - Would send to: " + email + "]"
-          : ""
-      }`,
+      to: email,
+      subject: "Acknowledgment of Your TalentNest Demo Request",
       html: clientHtml,
     });
-    console.log("✅ Client email sent:", clientResult);
+    console.log("✅ Client email sent");
 
     return NextResponse.json({ success: true });
   } catch (err) {

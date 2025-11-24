@@ -73,7 +73,7 @@ interface IntegrationsCardProps {
   footerText?: string;
 }
 
-const IntegrationsCard: React.FC<IntegrationsCardProps> = ({ 
+const IntegrationsCard: React.FC<IntegrationsCardProps> = ({
   colorScheme,
   title = "Know more. Manage better.",
   description = "The admin dashboard gives you complete visibility over your workforce — view who's checked in, track late arrivals, analyze work hours, and ensure compliance with site-specific geofences. Visual insights and exportable reports make it easy to manage productivity and attendance trends at a glance."
