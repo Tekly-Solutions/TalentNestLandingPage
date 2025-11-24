@@ -19,6 +19,18 @@ const Feature2: React.FC = () => {
     shadow: "rgba(75,1,80,0.12)",
   };
 
+  const purpleButtonColorScheme = {
+    gradient: "linear-gradient(90deg, #6B0170, #8B1090, #6B0170)",
+    hoverGradient: "linear-gradient(90deg, #8B1090, #AB20B0, #8B1090)",
+    textColor: "#fff",
+  };
+
+  const purpleMobileButtonColorScheme = {
+    background: "rgba(107, 1, 112, 0.1)",
+    hoverBackground: "rgba(107, 1, 112, 0.2)",
+    textColor: "#6B0170",
+  };
+
   return (
     <main
       className="w-full text-slate-900 p-4 sm:p-6 md:p-8 relative pb-28 flex items-center justify-center min-h-[80vh]"
@@ -38,7 +50,7 @@ const Feature2: React.FC = () => {
         style={{
           position: "absolute",
           left: "50%",
-          top: "-16px",
+          top: "24px",
           transform: "translate(-50%, 0)",
           zIndex: 20,
           background: "white",
@@ -61,6 +73,7 @@ const Feature2: React.FC = () => {
           maxWidth: "1100px",
           width: "100%",
           margin: "0 auto",
+          marginTop: "48px",
           position: "relative",
           zIndex: 1,
         }}
@@ -69,7 +82,7 @@ const Feature2: React.FC = () => {
         <HeroSection
           title="Goodbye admin overload"
           subtitle="Hello! effortless control"
-          description="Take complete control of your company's structure with our powerful Organization Management Module. From defining roles and permissions to creating multi-level hierarchies and managing branches, our system helps you build a secure, scalable, and perfectly aligned organizational framework."
+          description="Control your company's structure with our Organization Management Module. Define roles, create hierarchies, and manage branches securely."
         />
 
         {/* Custom Row: Two cards left, one card right */}
@@ -96,6 +109,7 @@ const Feature2: React.FC = () => {
           </div>
           <MobileCard
             colorScheme={purpleColorScheme}
+            buttonColorScheme={purpleMobileButtonColorScheme}
             title="Dynamic Org Hierarchies"
             description="Design flexible, multi-layered org structures—functional, geographical, or project-based—with ease. Clone existing hierarchies, schedule future structural changes, and maintain full version history with restore options. Drag-and-drop role assignments, access controls, and real-time syncing ensure each node is accurate and up to date."
           />
@@ -114,6 +128,7 @@ const Feature2: React.FC = () => {
         >
           <SecurityCard
             colorScheme={purpleColorScheme}
+            buttonColorScheme={purpleButtonColorScheme}
             title="Add and Manage Company Branches"
             description="Expand your organization seamlessly by adding new branches with complete location details and assigned employees. Our intuitive interface and powerful backend ensure accurate employee-branch mapping, preventing duplicates and maintaining data integrity."
           />
@@ -167,7 +182,7 @@ const Feature2: React.FC = () => {
                 margin: "8px",
               }}
             >
-              <ArrowButton />
+              <ArrowButton arrowColor="#6B0170" />
             </div>
           </div>
         </div>

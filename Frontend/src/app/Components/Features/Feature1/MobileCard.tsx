@@ -19,21 +19,36 @@ interface MobileCardProps {
     gradient: string;
     shadow: string;
   };
+  buttonColorScheme?: {
+    background: string;
+    hoverBackground: string;
+    textColor?: string;
+  };
   title?: string;
   description?: string;
 }
 
 const MobileCard: React.FC<MobileCardProps> = ({
   colorScheme,
+  buttonColorScheme,
   title = "Attendance in one tap",
   description = "With a single tap, employees can punch in or out through the mobile app the camera opens automatically, performs facial verification, and records the time and location instantly. No complex steps, no wasted time just smooth, instant check-ins that keep everyone on track.",
 }) => {
+  const [isHovered, setIsHovered] = React.useState(false);
+
   const defaultColors = {
     gradient: "linear-gradient(135deg, #fff9c4 0%, #ffe066 50%, #ffb300 100%)",
     shadow: "rgba(255,224,102,0.12)",
   };
 
+  const defaultButtonColors = {
+    background: "none",
+    hoverBackground: "#fff9c4",
+    textColor: "#333",
+  };
+
   const colors = colorScheme || defaultColors;
+  const buttonColors = buttonColorScheme || defaultButtonColors;
 
   return (
     <>
@@ -68,7 +83,29 @@ const MobileCard: React.FC<MobileCardProps> = ({
           {description}
         </p>
 
-        <span className="attendance-effortless">
+        <span
+          style={{
+            fontSize: "15px",
+            lineHeight: 1.6,
+            color: buttonColors.textColor,
+            textAlign: "right",
+            position: "absolute",
+            right: "20px",
+            bottom: "18px",
+            margin: 0,
+            width: "auto",
+            background: isHovered
+              ? buttonColors.hoverBackground
+              : buttonColors.background,
+            zIndex: 10,
+            borderRadius: "8px",
+            padding: "4px 12px",
+            cursor: "pointer",
+            transition: "background 0.2s",
+          }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           Attendance made effortless→
         </span>
 
@@ -444,30 +481,6 @@ const MobileCard: React.FC<MobileCardProps> = ({
           </div>
         )}
       </Card>
-
-      <style>{`
-      .attendance-effortless {
-        font-size: 15px;
-        line-height: 1.6;
-        color: #333;
-        text-align: right;
-        position: absolute;
-        right: 20px;
-        bottom: 18px;
-        margin: 0;
-        width: auto;
-        background: none;
-        z-index: 10;
-        border-radius: 8px;
-        padding: 4px 12px;
-        cursor: pointer;
-        transition: background 0.2s;
-      }
-      .attendance-effortless:hover {
-        background: #fff9c4;
-        backgroundBlendMode: "multiply, lighten",
-      }
-    `}</style>
     </>
   );
 };

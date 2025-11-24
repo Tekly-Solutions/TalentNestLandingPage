@@ -10,8 +10,15 @@ import RatingsCard from "../../Components/Features/Feature1/RatingsCard";
 import SecurityCard from "../../Components/Features/Feature1/SecurityCard";
 
 const Feature1: React.FC = () => {
+  const yellowButtonColorScheme = {
+    gradient: "linear-gradient(90deg, #fafad2 0%, #fffacd 100%)",
+    hoverGradient: "linear-gradient(90deg, #fffacd 0%, #fff59d 100%)",
+    textColor: "#000",
+  };
+
   return (
     <main
+      id="feature1"
       className="w-full text-slate-900 p-4 sm:p-6 md:p-8 relative pb-28 flex items-center justify-center min-h-[80vh]"
       style={{
         position: "relative",
@@ -29,12 +36,12 @@ const Feature1: React.FC = () => {
         style={{
           position: "absolute",
           left: "50%",
-          top: "-16px", // move downward
+          top: "24px",
           transform: "translate(-50%, 0)",
           zIndex: 20,
           background: "white",
           borderRadius: "99999px",
-          padding: 0, // remove extra padding
+          padding: 0,
           display: "inline-block",
         }}
       >
@@ -48,6 +55,7 @@ const Feature1: React.FC = () => {
           maxWidth: "1100px",
           width: "100%",
           margin: "0 auto",
+          marginTop: "48px",
           position: "relative",
           zIndex: 1,
         }}
@@ -130,7 +138,7 @@ const Feature1: React.FC = () => {
             marginRight: "auto",
           }}
         >
-          <SecurityCard />
+          <SecurityCard buttonColorScheme={yellowButtonColorScheme} />
         </div>
       </div>
     </main>

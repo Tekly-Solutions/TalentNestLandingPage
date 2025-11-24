@@ -12,6 +12,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer
+      id="footer"
       className="w-full text-white py-12 px-4 sm:px-8 relative overflow-hidden"
       style={{
         overflow: "visible",
@@ -23,19 +24,6 @@ const Footer: React.FC = () => {
         backgroundAttachment: "fixed, fixed, fixed, fixed",
       }}
     >
-      {/* Gradient border overlay - TOP*/}
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: "8px",
-          zIndex: 0,
-          background: `${noiseTexture}, white`,
-          pointerEvents: "none",
-        }}
-      />
       {/* Logo Overlay */}
       <div className="absolute inset-0 pointer-events-none">
         <img

@@ -8,12 +8,18 @@ interface SecurityCardProps {
     gradient: string;
     shadow: string;
   };
+  buttonColorScheme?: {
+    gradient: string;
+    hoverGradient?: string;
+    textColor?: string;
+  };
   title?: string;
   description?: string;
 }
 
 const SecurityCard: React.FC<SecurityCardProps> = ({
   colorScheme,
+  buttonColorScheme,
   title = "Built for trust and protection",
   description = "TalentNest ensures your employee data is encrypted, protected, and fully compliant with modern security standards. Every punch-in, location ping, and face scan is logged in a secure audit trail, giving you accountability and transparency across the system.",
 }) => {
@@ -22,7 +28,14 @@ const SecurityCard: React.FC<SecurityCardProps> = ({
     shadow: "rgba(255,224,102,0.12)",
   };
 
+  const defaultButtonColors = {
+    gradient: "linear-gradient(90deg, #fafad2 0%, #fffacd 100%)",
+    hoverGradient: "linear-gradient(90deg, #fafad2 0%, #fffacd 100%)",
+    textColor: "#000",
+  };
+
   const colors = colorScheme || defaultColors;
+  const buttonColors = buttonColorScheme || defaultButtonColors;
 
   return (
     <Card
@@ -100,20 +113,20 @@ const SecurityCard: React.FC<SecurityCardProps> = ({
       </p>
       <button
         style={{
-          margin: "16px auto 0",
-          padding: "12px 24px",
-          backgroundImage: `${colors.gradient}, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.9'/%3E%3C/svg%3E")`,
+          margin: "16px 0 0 auto",
+          padding: "8px 16px",
+          backgroundImage: `${buttonColors.gradient}, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.9'/%3E%3C/svg%3E")`,
           backgroundBlendMode: "multiply, lighten",
           backgroundAttachment: "fixed",
           backgroundClip: "border-box",
           WebkitMask:
             "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
           boxShadow:
-            "15px 4px 20px 0px rgba(0,0,0,0.32), 0px 4px 4px 0px rgba(0,0,0,0.25), inset 0px 4px 4px 0px rgba(0,0,0,0.25)",
-          color: "#000",
+            "10px 3px 15px 0px rgba(0,0,0,0.25), 0px 3px 3px 0px rgba(0,0,0,0.2), inset 0px 3px 3px 0px rgba(0,0,0,0.2)",
+          color: buttonColors.textColor,
           border: "none",
-          borderRadius: "50px",
-          fontSize: "14px",
+          borderRadius: "20px",
+          fontSize: "12px",
           fontWeight: 600,
           cursor: "pointer",
           position: "relative",
@@ -122,14 +135,14 @@ const SecurityCard: React.FC<SecurityCardProps> = ({
           transition: "all 0.3s ease-in-out",
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.background = `linear-gradient(90deg, #fafad2 0%, #fffacd 100%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.9'/%3E%3C/svg%3E")`;
+          e.currentTarget.style.background = `${buttonColors.hoverGradient}, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.9'/%3E%3C/svg%3E")`;
           e.currentTarget.style.boxShadow =
-            "20px 6px 25px 0px rgba(0,0,0,0.4), 0px 6px 6px 0px rgba(0,0,0,0.3), inset 0px 6px 6px 0px rgba(0,0,0,0.3)";
+            "15px 4px 20px 0px rgba(0,0,0,0.35), 0px 4px 4px 0px rgba(0,0,0,0.25), inset 0px 4px 4px 0px rgba(0,0,0,0.25)";
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.background = `linear-gradient(90deg, #fafad2 0%, #fffacd 100%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.9'/%3E%3C/svg%3E")`;
+          e.currentTarget.style.background = `${buttonColors.gradient}, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.9'/%3E%3C/svg%3E")`;
           e.currentTarget.style.boxShadow =
-            "15px 4px 20px 0px rgba(0,0,0,0.32), 0px 4px 4px 0px rgba(0,0,0,0.25), inset 0px 4px 4px 0px rgba(0,0,0,0.25)";
+            "10px 3px 15px 0px rgba(0,0,0,0.25), 0px 3px 3px 0px rgba(0,0,0,0.2), inset 0px 3px 3px 0px rgba(0,0,0,0.2)";
         }}
       >
         Safe, compliant, and worry-free attendance management →
