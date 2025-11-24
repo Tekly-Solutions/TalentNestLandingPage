@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const HeaderSection = () => {
   return (
-    <section 
+    <section
       className="relative min-h-screen"
       style={{
         backgroundImage: `linear-gradient(90deg, rgba(0,128,128,0.35) 0%, rgba(32,178,170,0.35) 50%, rgba(72,209,204,0.35) 100%), radial-gradient(circle at 60% 30%, rgba(72, 209, 204, 0.25) 0%, rgba(72, 209, 204, 0.08) 40%, transparent 0%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='heroNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4.5' numOctaves='8' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23heroNoise)' opacity='1'/%3E%3C/svg%3E")`,
@@ -107,7 +107,7 @@ const HeaderSection = () => {
           <img src="https://i.pravatar.cc/150?img=25" alt="Avatar" />
           <img src="https://i.pravatar.cc/150?img=32" alt="Avatar" />
         </div>
-        
+
         <div className="avatar-container reverse">
           <img src="https://i.pravatar.cc/150?img=45" alt="Avatar" />
           <img src="https://i.pravatar.cc/150?img=18" alt="Avatar" />

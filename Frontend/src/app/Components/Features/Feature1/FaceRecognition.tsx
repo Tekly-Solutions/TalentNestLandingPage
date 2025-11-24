@@ -27,7 +27,7 @@ const FaceRecognitionUI = () => {
             }, 2000);
             return 100;
           }
-          return prev +1;
+          return prev + 1;
         });
       }, 30);
 
@@ -110,7 +110,6 @@ const FaceRecognitionUI = () => {
             >
               Face Recognition
             </h2>
-            
           </div>
 
           {/* Face Recognition Area */}

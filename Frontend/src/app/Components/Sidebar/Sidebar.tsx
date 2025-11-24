@@ -9,7 +9,7 @@ const Sidebar: React.FC = () => {
     const handleScroll = () => {
       const heroSection = document.querySelector("section");
       const footer = document.getElementById("footer");
-      
+
       if (!heroSection || !footer) return;
 
       const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
@@ -31,7 +31,7 @@ const Sidebar: React.FC = () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
-    
+
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -39,8 +39,10 @@ const Sidebar: React.FC = () => {
   };
 
   return (
-    <aside 
-      className={`fixed left-0 top-1/2 transform -translate-y-1/2 z-50 h-auto max-h-[600px] w-12 sm:w-14 bg-white rounded-r-[25px] sm:rounded-r-[50px] shadow-[4px_0_20px_rgba(var(--teal-medium-rgb),0.3)] flex flex-col items-center justify-center py-4 sm:py-8 px-2 transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+    <aside
+      className={`fixed left-0 top-1/2 transform -translate-y-1/2 z-50 h-auto max-h-[600px] w-12 sm:w-14 bg-white rounded-r-[25px] sm:rounded-r-[50px] shadow-[4px_0_20px_rgba(var(--teal-medium-rgb),0.3)] flex flex-col items-center justify-center py-4 sm:py-8 px-2 transition-opacity duration-300 ${
+        isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}
     >
       <div className="flex flex-col items-center gap-4 sm:gap-6">
         {/* Navigation links */}
