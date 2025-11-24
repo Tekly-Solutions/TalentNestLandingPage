@@ -10,12 +10,14 @@ interface SecurityCardProps {
   };
   title?: string;
   description?: string;
+  buttonText?: string;
 }
 
 const SecurityCard: React.FC<SecurityCardProps> = ({ 
   colorScheme,
   title = "Built for trust and protection",
   description = "TalentNest ensures your employee data is encrypted, protected, and fully compliant with modern security standards. Every punch-in, location ping, and face scan is logged in a secure audit trail, giving you accountability and transparency across the system."
+  , buttonText = "Safe, compliant, and worry-free attendance management →"
 }) => {
   const defaultColors = {
     gradient: "linear-gradient(135deg, #fff9c4 0%, #ffe066 50%, #ffb300 100%)",
@@ -132,7 +134,7 @@ const SecurityCard: React.FC<SecurityCardProps> = ({
             "15px 4px 20px 0px rgba(0,0,0,0.32), 0px 4px 4px 0px rgba(0,0,0,0.25), inset 0px 4px 4px 0px rgba(0,0,0,0.25)";
         }}
       >
-        Safe, compliant, and worry-free attendance management →
+        {buttonText}
       </button>
     </Card>
   );

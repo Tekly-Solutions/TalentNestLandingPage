@@ -21,12 +21,14 @@ interface MobileCardProps {
   };
   title?: string;
   description?: string;
+  footerText?: string;
 }
 
 const MobileCard: React.FC<MobileCardProps> = ({ 
   colorScheme,
   title = "Attendance in one tap",
   description = "With a single tap, employees can punch in or out through the mobile app the camera opens automatically, performs facial verification, and records the time and location instantly. No complex steps, no wasted time just smooth, instant check-ins that keep everyone on track."
+  , footerText = "Attendance made effortless→"
 }) => {
   const defaultColors = {
     gradient: "linear-gradient(135deg, #fff9c4 0%, #ffe066 50%, #ffb300 100%)",
@@ -69,7 +71,7 @@ const MobileCard: React.FC<MobileCardProps> = ({
         </p>
 
         <span className="attendance-effortless">
-          Attendance made effortless→
+          {footerText}
         </span>
 
         <div className="mt-4 sm:mt-6 md:mt-8 text-center">
