@@ -34,15 +34,9 @@ const InputButton: React.FC<InputButtonProps> = ({
           fontSize: "14px",
           display: "flex",
           alignItems: "center",
-          gap: "8px",
         }}
       >
         <span>{label}</span>
-        <span
-          style={{ color: "#A9EBA9", fontWeight: "bold", fontSize: "12px" }}
-        >
-          &gt;&gt;
-        </span>
       </button>
     </div>
   );

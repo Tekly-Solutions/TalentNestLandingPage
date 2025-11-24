@@ -36,19 +36,9 @@ const GradientButton: React.FC<GradientButtonProps> = ({
           position: "relative",
           zIndex: 2,
           padding: "0 16px",
-          gap: "8px",
         }}
       >
         <span>{label}</span>
-        <span
-          style={{
-            color: "white",
-            fontWeight: "bold",
-            fontSize: "10px",
-          }}
-        >
-          &gt;&gt;
-        </span>
       </div>
     </div>
   );

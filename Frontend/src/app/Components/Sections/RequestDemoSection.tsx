@@ -58,18 +58,18 @@ const RequestDemoSection: React.FC = () => {
         <p className="text-white/60 text-xs mt-6 max-w-xs mx-auto">
           By submitting your information, you agree to Tekly's{" "}
           <a href="#" className="underline text-white">
-            Terms of Service ⯈
+            Terms of Service
           </a>{" "}
           and{" "}
           <a href="#" className="underline text-white">
-            Privacy Policy ⯈
+            Privacy Policy
           </a>
           . You can optout anytime.
         </p>
         <div className="mt-4 text-xs text-white/70">
           <span>Not ready for a demo? </span>
           <a href="#" className="underline text-white">
-            Explore other options ⯈
+            Explore other options
           </a>
         </div>
         <p className="text-white/40 text-[11px] mt-4 max-w-xs mx-auto">

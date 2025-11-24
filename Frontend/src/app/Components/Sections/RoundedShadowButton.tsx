@@ -32,20 +32,7 @@ const RoundedShadowButton: React.FC<Props> = ({
           backdropFilter: "blur(10px)",
         }}
       />
-      {/* Center chevron (>) */}
-      <span
-        aria-hidden
-        className="absolute text-white font-bold"
-        style={{
-          left: "50%",
-          top: "50%",
-          transform: "translate(-50%, -50%)",
-          lineHeight: 1,
-          fontSize: Math.round(size * 0.45) + "px",
-        }}
-      >
-        &gt;
-      </span>
+
     </button>
   );
 };

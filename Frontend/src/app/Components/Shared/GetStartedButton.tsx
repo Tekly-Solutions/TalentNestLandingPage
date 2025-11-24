@@ -5,11 +5,17 @@ import React from "react";
 type GetStartedButtonProps = {
   label?: string;
   className?: string;
+  type?: "button" | "submit";
+  onClick?: () => void;
+  disabled?: boolean;
 };
 
 const GetStartedButton: React.FC<GetStartedButtonProps> = ({
   label = "Get Started",
   className,
+  type = "button",
+  onClick,
+  disabled,
 }) => {
   return (
     <div
@@ -24,8 +30,12 @@ const GetStartedButton: React.FC<GetStartedButtonProps> = ({
       }}
     >
       <button
-        type="button"
-        className="w-full h-full flex items-center justify-center bg-white text-[#007E7E] font-semibold rounded-full px-4 py-2 focus:outline-none"
+        type={type}
+        onClick={onClick}
+        disabled={disabled}
+        className={`w-full h-full flex items-center justify-center bg-white text-[#007E7E] font-semibold rounded-full px-4 py-2 focus:outline-none ${
+          disabled ? "opacity-70 cursor-not-allowed" : ""
+        }`}
         style={{
           border: "none",
           background: "white",

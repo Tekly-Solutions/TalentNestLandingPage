@@ -86,11 +86,7 @@ const NavButton2: React.FC<NavButton2Props> = ({
       onMouseMove={handleMouseMove}
     >
       <div style={flowStyle}></div>
-      <div className="flex items-center gap-3">
-        {/* Live Character Avatar as a separate component */}
-        <AnimatedEmoji isClicked={isClicked} />
-        <span style={{ zIndex: 1, position: "relative" }}>Request Demo</span>
-      </div>
+      <span style={{ zIndex: 1, position: "relative" }}>Request Demo</span>
     </button>
   );
 };
