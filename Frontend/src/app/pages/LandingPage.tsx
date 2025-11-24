@@ -4,6 +4,7 @@ import FooterPage from "./FooterPage";
 import React from "react";
 import PartnersSection from "../Components/Sections/PartnersSection";
 import Feature1 from "./Features/Feature1";
+import Feature2 from "./Features/Feature2";
 
 const LandingPage: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const LandingPage: React.FC = () => {
       <NavBar />
       <RequestDemoPage />
       <Feature1 />
-        <Feature1 />
+      <Feature2 />
       <PartnersSection />
       <FooterPage />
     </div>

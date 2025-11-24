@@ -9,7 +9,7 @@ import RatingsCard from "../../Components/Features/Feature1/RatingsCard";
 
 import SecurityCard from "../../Components/Features/Feature1/SecurityCard";
 
-const Feature1: React.FC = () => {
+const Feature2: React.FC = () => {
   return (
     <main
       className="w-full text-slate-900 mt-12 mb-8 p-4 sm:p-6 md:p-8 relative pb-28 flex items-center justify-center min-h-[80vh]"
@@ -17,7 +17,7 @@ const Feature1: React.FC = () => {
         position: "relative",
         zIndex: 1,
         overflow: "visible", // allow floating button to overflow
-        backgroundImage: `linear-gradient(90deg, rgba(255,224,102,0.35) 0%, rgba(255,179,0,0.35) 50%, rgba(191,161,0,0.35) 100%), radial-gradient(circle at 60% 30%, rgba(255, 224, 102, 0.25) 0%, rgba(255, 224, 102, 0.08) 40%, transparent 0%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.9'/%3E%3C/svg%3E")`,
+        backgroundImage: `linear-gradient(90deg, rgba(16,185,50,0.35) 0%, rgba(5,150,50,0.35) 50%, rgba(4,120,50,0.35) 100%), radial-gradient(circle at 60% 30%, rgba(16,185,129,0.25) 0%, rgba(16,185,129,0.08) 40%, transparent 0%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.9'/%3E%3C/svg%3E")`,
         backgroundBlendMode: "multiply, lighten, multiply",
         backgroundColor: "#fff",
         width: "100%",
@@ -65,7 +65,7 @@ const Feature1: React.FC = () => {
         }}
       >
         <HeadButton>
-          <span style={{ color: "#000" }}>#Smart&nbsp;</span> Attendance System
+          <span style={{ color: "#000" }}>#Org&nbsp;</span> Org Charts Reimagined
         </HeadButton>
       </div>
       <div
@@ -163,4 +163,4 @@ const Feature1: React.FC = () => {
   );
 };
 
-export default Feature1;
+export default Feature2;

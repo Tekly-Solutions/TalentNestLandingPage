@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 interface TalentNestLogoProps {
   className?: string;
@@ -6,7 +7,7 @@ interface TalentNestLogoProps {
 
 const TalentNestLogo: React.FC<TalentNestLogoProps> = ({ className = "" }) => {
   return (
-    <div className={`flex items-center ${className}`}>
+    <Link href="/" aria-label="Go to TalentNest landing page" className={`flex items-center ${className} cursor-pointer`}>
       {/* Image logo from public (spaces URL-encoded) */}
       <img
         src={"/Talent%20Nest%20logo%20only.png"}
@@ -29,7 +30,7 @@ const TalentNestLogo: React.FC<TalentNestLogoProps> = ({ className = "" }) => {
           Nest
         </span>
       </div>
-    </div>
+    </Link>
   );
 };
 

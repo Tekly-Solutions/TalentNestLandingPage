@@ -107,19 +107,8 @@ const NavButton: React.FC = () => {
         onMouseLeave={handleMouseLeave}
       >
         <span>Start Free Trial</span>
-        <span
-          style={{
-            color: isHovered ? "var(--teal-medium)" : "white",
-            transition: "color 0.3s ease",
-            fontWeight: "bold",
-            fontSize: "10px",
-            animation: "blink 1.5s ease-in-out infinite",
-          }}
-        >
-          &gt;&gt;
-        </span>
       </div>
-      <style jsx>{`
+      {/* <style jsx>{`
         @keyframes flow {
           0% {
             background-position: 0% 0%;
@@ -146,7 +135,7 @@ const NavButton: React.FC = () => {
             opacity: 0.3;
           }
         }
-      `}</style>
+      `}</style> */}
     </div>
   );
 };
