@@ -28,7 +28,7 @@ const DemoForm: React.FC = () => {
       if (!res.ok || !data?.success) {
         throw new Error(data?.error || "Failed to send email");
       }
-      setMessage("Success! We've emailed you and our team.");
+      setMessage("Success! Our team will contact you ASAP.");
       setFirstName("");
       setLastName("");
       setEmail("");
