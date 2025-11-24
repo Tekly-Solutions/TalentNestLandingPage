@@ -37,7 +37,7 @@ const Feature3: React.FC = () => {
         style={{
           position: "absolute",
           left: "50%",
-          top: "-16px",
+          top: "24px",
           transform: "translate(-50%, 0)",
           zIndex: 20,
           background: "white",
@@ -47,7 +47,11 @@ const Feature3: React.FC = () => {
         }}
       >
         <HeadButtonGreen>
-          <span style={{ color: "#fff" }}>#Organization Hierarchy&nbsp;</span>
+          <span style={{ color: "#fff", fontWeight: 600 }}>#Smart</span>
+          <span style={{ color: "#fff", marginLeft: 4 }}>
+            {" "}
+            Organization Hierarchy
+          </span>
         </HeadButtonGreen>
       </div>
       <div
@@ -56,6 +60,7 @@ const Feature3: React.FC = () => {
           maxWidth: "1100px",
           width: "100%",
           margin: "0 auto",
+          marginTop: "48px",
           position: "relative",
           zIndex: 1,
         }}
