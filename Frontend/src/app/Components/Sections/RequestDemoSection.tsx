@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import GradientHeadline from "@/app/Components/Shared/GradientHeadline";
 import GradientPanel from "@/app/Components/Shared/GradientPanel";
 import DemoForm from "@/app/Components/Shared/DemoForm";
@@ -56,20 +57,20 @@ const RequestDemoSection: React.FC = () => {
         </p>
         <DemoForm />
         <p className="text-white/60 text-xs mt-6 max-w-xs mx-auto">
-          By submitting your information, you agree to Lattice;s{" "}
-          <a href="#" className="underline text-white">
-            Terms of Service ⯈
-          </a>{" "}
+          By submitting your information, you agree to TalentNest's{" "}
+          <Link href="/TermsOfService" className="underline text-white">
+            Terms of Service
+          </Link>{" "}
           and{" "}
-          <a href="#" className="underline text-white">
-            Privacy Policy ⯈
-          </a>
+          <Link href="/PrivacyPolicy" className="underline text-white">
+            Privacy Policy
+          </Link>
           . You can opt out anytime.
         </p>
         <div className="mt-4 text-xs text-white/70">
           <span>Not ready for a demo? </span>
           <a href="#" className="underline text-white">
-            Explore other options ⯈
+            Explore other options
           </a>
         </div>
         <p className="text-white/40 text-[11px] mt-4 max-w-xs mx-auto">
