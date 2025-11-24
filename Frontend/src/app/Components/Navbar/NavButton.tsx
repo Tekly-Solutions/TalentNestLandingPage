@@ -117,7 +117,7 @@ const NavButton: React.FC<NavButtonProps> = ({ onClick }) => {
       >
         <span>Start Free Trial</span>
       </div>
-      <style jsx>{`
+      {/* <style jsx>{`
         @keyframes flow {
           0% {
             background-position: 0% 0%;
@@ -144,7 +144,7 @@ const NavButton: React.FC<NavButtonProps> = ({ onClick }) => {
             opacity: 0.3;
           }
         }
-      `}</style>
+      `}</style> */}
     </div>
   );
 };

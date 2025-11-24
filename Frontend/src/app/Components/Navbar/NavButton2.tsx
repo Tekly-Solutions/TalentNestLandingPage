@@ -86,7 +86,9 @@ const NavButton2: React.FC<NavButton2Props> = ({
       onMouseMove={handleMouseMove}
     >
       <div style={flowStyle}></div>
-      <span style={{ zIndex: 1, position: "relative" }}>Request Demo</span>
+      <div className="flex items-center gap-3">
+        <span style={{ zIndex: 1, position: "relative" }}>Request Demo</span>
+      </div>
     </button>
   );
 };
