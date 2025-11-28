@@ -4,19 +4,20 @@ import React from "react";
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center pt-20 bg-white">
+    <section className="relative w-full min-h-screen pt-20 bg-white">
       <style>{`
         .avatar-container {
           --s: 120px;
           --g: 14px;
           
-          position: relative;
+          position: absolute;
+          top: 100px;
+          right: 80px;
           width: 500px;
           height: 500px;
           display: flex;
           align-items: center;
           justify-content: center;
-          margin: 20px 0;
         }
 
         .avatar-container img {
@@ -82,17 +83,15 @@ const HeroSection: React.FC = () => {
         }
       `}</style>
 
-      <div className="relative z-10 flex items-center justify-end min-h-screen py-20 pr-20">
-        <div className="avatar-container">
-          <img src="https://i.pravatar.cc/150?img=3" alt="Avatar" />
-          <img src="https://i.pravatar.cc/150?img=10" alt="Avatar" />
-          <img src="https://i.pravatar.cc/150?img=5" alt="Avatar" />
-          <img src="https://i.pravatar.cc/150?img=9" alt="Avatar" />
-          <img src="https://i.pravatar.cc/150?img=2" alt="Avatar" />
-          <img src="https://i.pravatar.cc/150?img=8" alt="Avatar" />
-          <img src="https://i.pravatar.cc/150?img=25" alt="Avatar" />
-          <img src="https://i.pravatar.cc/150?img=32" alt="Avatar" />
-        </div>
+      <div className="avatar-container">
+        <img src="https://i.pravatar.cc/150?img=3" alt="Avatar" />
+        <img src="https://i.pravatar.cc/150?img=10" alt="Avatar" />
+        <img src="https://i.pravatar.cc/150?img=5" alt="Avatar" />
+        <img src="https://i.pravatar.cc/150?img=9" alt="Avatar" />
+        <img src="https://i.pravatar.cc/150?img=2" alt="Avatar" />
+        <img src="https://i.pravatar.cc/150?img=8" alt="Avatar" />
+        <img src="https://i.pravatar.cc/150?img=25" alt="Avatar" />
+        <img src="https://i.pravatar.cc/150?img=32" alt="Avatar" />
       </div>
     </section>
   );
