@@ -72,8 +72,9 @@ const Feature2: React.FC = () => {
         style={{
           maxWidth: "1100px",
           width: "100%",
-          margin: "0 auto",
           marginTop: "48px",
+          marginLeft: "auto",
+          marginRight: "auto",
           position: "relative",
           zIndex: 1,
         }}

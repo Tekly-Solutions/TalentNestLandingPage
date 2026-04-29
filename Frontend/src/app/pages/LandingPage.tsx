@@ -1,5 +1,4 @@
 import NavBar from "../Components/Navbar/NavBar";
-import Sidebar from "../Components/Sidebar/Sidebar";
 import VideoSection from "../Components/Sections/VideoSection";
 import RequestDemoPage from "./RequestDemoPage.jsx/RequestDemoPage";
 import FooterPage from "./FooterPage";
@@ -15,7 +14,6 @@ const LandingPage: React.FC = () => {
   return (
     <>
       <NavBar />
-      <Sidebar />
       <HeroSection />
       <RequestDemoPage />
 

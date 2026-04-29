@@ -16,7 +16,6 @@ const Sidebar: React.FC = () => {
       const footerTop = footer.offsetTop;
       const scrollPosition = window.scrollY;
 
-      // Show sidebar when scrolled past hero and before footer
       setIsVisible(scrollPosition > heroBottom && scrollPosition < footerTop);
     };
 
