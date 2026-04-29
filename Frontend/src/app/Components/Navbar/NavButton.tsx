@@ -2,7 +2,11 @@
 
 import React, { useState, useRef, CSSProperties } from "react";
 
-const NavButton: React.FC = () => {
+interface NavButtonProps {
+  onClick?: () => void;
+}
+
+const NavButton: React.FC<NavButtonProps> = ({ onClick }) => {
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({
     x: 0,
     y: 0,
@@ -92,6 +96,10 @@ const NavButton: React.FC = () => {
     target.style.color = "white";
   };
 
+  const handleClick = () => {
+    if (onClick) onClick();
+  };
+
   return (
     <div
       ref={buttonRef}
@@ -105,21 +113,11 @@ const NavButton: React.FC = () => {
         style={innerButtonStyle}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onClick={handleClick}
       >
         <span>Start Free Trial</span>
-        <span
-          style={{
-            color: isHovered ? "var(--teal-medium)" : "white",
-            transition: "color 0.3s ease",
-            fontWeight: "bold",
-            fontSize: "10px",
-            animation: "blink 1.5s ease-in-out infinite",
-          }}
-        >
-          &gt;&gt;
-        </span>
       </div>
-      <style jsx>{`
+      {/* <style jsx>{`
         @keyframes flow {
           0% {
             background-position: 0% 0%;
@@ -146,7 +144,7 @@ const NavButton: React.FC = () => {
             opacity: 0.3;
           }
         }
-      `}</style>
+      `}</style> */}
     </div>
   );
 };

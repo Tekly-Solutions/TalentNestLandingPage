@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import NavButton from "./NavButton";
 import NavButton2 from "./NavButton2";
@@ -6,8 +8,15 @@ import TalentNestLogo from "./TalentNestLogo";
 import MobileStickyCTAs from "./MobileStickyCTAs";
 
 const NavBar: React.FC = () => {
+  const scrollToDemo = () => {
+    const demoSection = document.getElementById("welcome");
+    if (demoSection) {
+      demoSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
-    <header className="sticky top-0 z-50 w-full max-w-[1000px] h-12 sm:h-14 bg-white rounded-b-[25px] sm:rounded-b-[50px] shadow-[0_4px_20px_rgba(var(--teal-medium-rgb),0.3)] mx-auto flex items-center justify-start pl-2 sm:pl-8 pr-0 sm:pr-10">
+    <header className="fixed top-0 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-[1000px] h-12 sm:h-14 bg-white rounded-b-[25px] sm:rounded-b-[50px] shadow-[0_4px_20px_rgba(var(--teal-medium-rgb),0.3)] flex items-center justify-center pl-2 sm:pl-8 pr-0 sm:pr-10">
       <div className="flex items-center gap-1 sm:gap-6">
         <div className="ml-2 sm:ml-6">
           <TalentNestLogo />
@@ -21,8 +30,8 @@ const NavBar: React.FC = () => {
           <div className="mr-2 sm:mr-6">
             <NavButtonMain />
           </div>
-          <NavButton2 />
-          <NavButton />
+          <NavButton2 onClick={scrollToDemo} />
+          <NavButton onClick={scrollToDemo} />
         </div>
       </div>
       {/* Mobile bottom-centered sticky CTAs */}

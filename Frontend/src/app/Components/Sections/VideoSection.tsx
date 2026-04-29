@@ -1,0 +1,262 @@
+"use client";
+
+import React, { useEffect, useRef, useState } from "react";
+
+const VideoSection: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [videoSrc, setVideoSrc] = useState(
+    "https://www.youtube.com/embed/aSte18D2_YE?loop=1&playlist=aSte18D2_YE&autoplay=1&mute=1&enablejsapi=1&rel=0&modestbranding=1&iv_load_policy=3&showinfo=0&cc_load_policy=0&controls=1&disablekb=1&fs=0"
+  );
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const playlistVideos = [
+    {
+      id: 0,
+      title: "TalentNest Overview",
+      description:
+        "Discover how TalentNest revolutionizes workforce management",
+      videoTitle: "TalentNest Main Video",
+      videoId: "aSte18D2_YE",
+    },
+    {
+      id: 1,
+      title: "AI Workforce Analytics",
+      description: "Learn how our AI analyzes workforce patterns",
+      videoTitle: "TalentNest Feature Video 1",
+      videoId: "9bZkp7q19f0", // Working YouTube video ID
+    },
+    {
+      id: 2,
+      title: "Smart Attendance Tracking",
+      description: "Automated attendance monitoring system",
+      videoTitle: "TalentNest Feature Video 2",
+      videoId: "dQw4w9WgXcQ", // Working YouTube video ID
+    },
+    {
+      id: 3,
+      title: "Performance Insights",
+      description: "Data-driven workforce optimization",
+      videoTitle: "TalentNest Feature Video 3",
+      videoId: "jNQXAC9IVRw", // Working YouTube video ID
+    },
+  ];
+
+  const handlePlaylistVideoClick = (videoId: string) => {
+    const newSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0&modestbranding=1&iv_load_policy=3&showinfo=0&cc_load_policy=0&enablejsapi=1&controls=1&disablekb=1&fs=0`;
+    setVideoSrc(newSrc);
+    setIsPlaying(true);
+  };
+
+  const resetToDefaultVideo = () => {
+    const defaultSrc =
+      "https://www.youtube.com/embed/aSte18D2_YE?loop=1&playlist=aSte18D2_YE&autoplay=1&mute=1&enablejsapi=1&rel=0&modestbranding=1&iv_load_policy=3&showinfo=0&cc_load_policy=0&controls=1&disablekb=1&fs=0";
+    setVideoSrc(defaultSrc);
+    setIsPlaying(true);
+  };
+
+  // Function to safely pause the video
+  const pauseVideo = () => {
+    if (iframeRef.current) {
+      try {
+        iframeRef.current.contentWindow?.postMessage(
+          JSON.stringify({
+            event: "command",
+            func: "pauseVideo",
+            args: "",
+          }),
+          "*"
+        );
+      } catch (error) {
+        console.log("Video paused");
+      }
+    }
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Only auto-play if it's the default video
+            if (videoSrc.includes("aSte18D2_YE")) {
+              setVideoSrc(
+                "https://www.youtube.com/embed/aSte18D2_YE?loop=1&playlist=aSte18D2_YE&autoplay=1&mute=1&enablejsapi=1&rel=0&modestbranding=1&iv_load_policy=3&showinfo=0&cc_load_policy=0&controls=1&disablekb=1&fs=0"
+              );
+              setIsPlaying(true);
+            }
+          } else {
+            // Pause the video when leaving the section
+            pauseVideo();
+            setIsPlaying(false);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [videoSrc]);
+
+  // Handle iframe load to detect when video ends
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      try {
+        const data = JSON.parse(event.data);
+        if (data.event === "onStateChange") {
+          if (data.info === 0) {
+            // Video ended
+            if (!videoSrc.includes("aSte18D2_YE")) {
+              // Playlist video ended, reset to default
+              resetToDefaultVideo();
+            }
+            // Default video loops automatically due to loop=1&playlist parameter
+          } else if (data.info === 2) {
+            // Video paused
+            setIsPlaying(false);
+          } else if (data.info === 1) {
+            // Video playing
+            setIsPlaying(true);
+          }
+        }
+      } catch (error) {
+        // Not a YouTube API message
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, [videoSrc]);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative w-full max-w-[1200px] mx-auto mt-20 mb-12 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    >
+      <div className="flex justify-center items-center">
+        {/* YouTube Video */}
+        <div className="relative animate-fade-in-up max-w-4xl w-full">
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-teal-light/10 to-teal-medium/10">
+            <iframe
+              ref={iframeRef}
+              src={videoSrc}
+              frameBorder="0"
+              width="100%"
+              height="100%"
+              className="rounded-2xl"
+              title="TalentNest Introduction Video"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+
+            {/* Status overlay */}
+            {!isPlaying && (
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <div className="text-white text-center">
+                  <svg
+                    className="w-16 h-16 mx-auto mb-2 opacity-80"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  <p className="text-lg font-semibold">Video Paused</p>
+                  <p className="text-sm opacity-80">Click play to continue</p>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Video Playlist - Using thumbnails instead of iframes */}
+      <div className="mt-12 relative overflow-hidden max-w-5xl mx-auto">
+        <div className="flex animate-scroll-right-to-left">
+          {/* Original playlist items */}
+          {playlistVideos.map((video) => (
+            <div
+              key={video.id}
+              className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3"
+            >
+              <div
+                className="group cursor-pointer"
+                onClick={() => handlePlaylistVideoClick(video.videoId)}
+              >
+                <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-teal-light/10 to-teal-medium/10 transform transition-transform duration-300 group-hover:scale-105">
+                  {/* YouTube thumbnail instead of iframe */}
+                  <img
+                    src={`https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`}
+                    alt={video.videoTitle}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:whitespace-nowrap transition-opacity duration-300 flex items-center justify-center"></div>
+                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                    Click to play
+                  </div>
+                </div>
+                <div className="mt-3">
+                  <h4 className="text-sm font-semibold text-slate-900 group-hover:text-teal-medium transition-colors bg-white rounded-2xl px-3 py-1 shadow-sm text-center">
+                    {video.title}
+                  </h4>
+                  <p className="text-xs text-white mt-1 text-center">
+                    {video.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          {/* Duplicate set for seamless loop */}
+          {playlistVideos.map((video) => (
+            <div
+              key={`duplicate-${video.id}`}
+              className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3"
+            >
+              <div
+                className="group cursor-pointer"
+                onClick={() => handlePlaylistVideoClick(video.videoId)}
+              >
+                <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-teal-light/10 to-teal-medium/10 transform transition-transform duration-300 group-hover:scale-105">
+                  <img
+                    src={`https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`}
+                    alt={video.videoTitle}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"></div>
+                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                    Click to play
+                  </div>
+                </div>
+                <div className="mt-3">
+                  <h4 className="text-sm font-semibold text-slate-900 group-hover:text-teal-medium transition-colors bg-white rounded-2xl px-3 py-1 shadow-sm text-center">
+                    {video.title}
+                  </h4>
+                  <p className="text-xs text-white mt-1 text-center">
+                    {video.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute top-20 left-10 w-20 h-20 bg-teal-light/20 rounded-full blur-xl animate-pulse"></div>
+      <div className="absolute top-40 right-16 w-16 h-16 bg-teal-medium/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+      <div className="absolute bottom-20 left-20 w-12 h-12 bg-teal-deep/20 rounded-full blur-xl animate-pulse delay-2000"></div>
+      <div className="absolute top-1/2 right-8 w-8 h-8 bg-teal-light/30 rounded-full blur-lg animate-bounce"></div>
+    </section>
+  );
+};
+
+export default VideoSection;

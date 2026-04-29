@@ -2,13 +2,23 @@
 
 import React from "react";
 
-export default function CircularBackButton() {
+interface ArrowButtonProps {
+  arrowColor?: string;
+}
+
+export default function CircularBackButton({
+  arrowColor = "#FFD600",
+}: ArrowButtonProps) {
+  const [isHovered, setIsHovered] = React.useState(false);
+
   return (
     <div className="flex items-center justify-center p-2">
       <button
         className="relative group"
         onClick={() => console.log("Back button clicked")}
         aria-label="Go back"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
         {/* Main circle */}
         {/* Main circle */}
@@ -21,25 +31,16 @@ export default function CircularBackButton() {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             style={{
-              opacity: 0.3,
+              opacity: isHovered ? 1 : 0.3,
               filter:
                 "drop-shadow(0 2px 6px rgba(20, 184, 166, 0.45)) drop-shadow(0 1px 2px rgba(0,0,0,0.12))",
               transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "scale(1.05)";
-              e.currentTarget.style.filter =
-                "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6))";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "scale(1)";
-              e.currentTarget.style.filter =
-                "drop-shadow(0 2px 6px rgba(20, 184, 166, 0.45)) drop-shadow(0 1px 2px rgba(0,0,0,0.12))";
+              transform: isHovered ? "scale(1.05)" : "scale(1)",
             }}
           >
             <path
               d="M9 6L15 12L9 18"
-              stroke="#FFD600"
+              stroke={arrowColor}
               strokeWidth="2.2"
               strokeLinecap="round"
               strokeLinejoin="round"
